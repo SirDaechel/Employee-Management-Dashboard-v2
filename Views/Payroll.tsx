@@ -1,9 +1,5 @@
-import React from 'react'
-
 const Payroll = () => {
-  return (
-    <div>Payroll</div>
-  )
-}
+  return <div>Payroll</div>;
+};
 
-export default Payroll
+export default Payroll;
