@@ -6,6 +6,7 @@ export default {
       colors: {
         customgrey: "#7e7e7e",
         bodycolour: "#f5f5f5",
+        primarycolour: "#6c63ff",
       },
       fontFamily: {
         roboto: "'Roboto', sans-serif",
@@ -14,6 +15,8 @@ export default {
       },
       fontSize: {
         0.83: "0.83rem",
+        1.2: "1.2rem",
+        1.65: "1.65rem",
       },
       spacing: {
         10.8: "10.8rem",

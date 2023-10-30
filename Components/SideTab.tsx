@@ -1,19 +1,19 @@
-import { ReactElement } from "react";
 import { NavLink } from "react-router-dom";
 
 type SideBarProps = {
-  icon: ReactElement;
+  icon: JSX.Element;
   label: String;
   linkTo: any;
 };
 
 const SideTab = ({ icon, label, linkTo }: SideBarProps) => {
   return (
-    <NavLink to={linkTo}>
-      <div className="flex items-center gap-0.62 text-customgrey p-0.62 rounded-lg cursor-pointer">
-        <span>{icon}</span>
-        <p className="text-0.83 font-medium">{label}</p>
-      </div>
+    <NavLink
+      to={linkTo}
+      className="flex items-center gap-0.62 text-customgrey p-0.62 rounded-lg cursor-pointer"
+    >
+      <span className="flex items-center justify-center text-1.2">{icon}</span>
+      <p className="text-0.83 font-medium">{label}</p>
     </NavLink>
   );
 };
