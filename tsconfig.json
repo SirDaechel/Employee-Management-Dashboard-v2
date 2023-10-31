@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "Routes", "components", "views"],
+  "include": ["src", "Routes", "Components", "Views"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

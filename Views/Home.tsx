@@ -1,9 +1,9 @@
-import ProjectFinanceCard from "../components/ProjectFinanceCard";
+import ProjectFinanceCard from "../Components/ProjectFinanceCard";
 import arrowup2 from "../assets/Icons/arrowup2";
 import arrowdown2 from "../assets/Icons/arrowdown2";
-import BarChart from "../components/Barchart";
-import StaffsCountChart from "../components/StaffsCountChart";
-import ProjectCompletionChart from "../components/ProjectCompletionChart";
+import BarChart from "../Components/Barchart";
+import StaffsCountChart from "../Components/StaffsCountChart";
+import ProjectCompletionChart from "../Components/ProjectCompletionChart";
 
 const Home = () => {
   return (
