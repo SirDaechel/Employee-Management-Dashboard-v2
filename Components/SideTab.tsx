@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 type SideBarProps = {
   icon: JSX.Element;
-  label: String;
+  label: string;
   linkTo: any;
 };
 

@@ -40,7 +40,7 @@ const TopNav = () => {
         </div>
       </article>
 
-      <div className="flex items-center justify-center gap-1.5">
+      <div className="flex items-center justify-center gap-6">
         <div className="relative cursor-pointer">
           <p className="absolute w-2 h-2 bg-customred p-0.62 rounded-br50 text-white font-poppins text-0.7 flex items-center justify-center right-m35 top-m35">
             4
@@ -60,7 +60,7 @@ const TopNav = () => {
 
           <article className="flex flex-col font-poppins text-0.7 text-darkgrey">
             <p className="font-semibold">David Okpala</p>
-            <p className="userrole">Administrator</p>
+            <p>Administrator</p>
           </article>
         </div>
       </div>
