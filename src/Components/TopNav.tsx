@@ -54,7 +54,7 @@ const TopNav = () => {
         <div className="flex items-center justify-center gap-0.7">
           <img
             className="border-2 border-solid border-primarycolour rounded-br50 w-2.8 h-2.8 cursor-pointer"
-            src="../assets/images/StaffsPhoto/adminPhoto.png"
+            src="src\assets\images\adminPhoto.webp"
             alt="user photo"
           />
 
