@@ -1,4 +1,4 @@
-import notificationsicon from "../../assets/Icons/notificationsicon";
+import notificationsicon from "../assets/icons/notificationIcon";
 
 const TopNav = () => {
   //greeting with respect to time of the day

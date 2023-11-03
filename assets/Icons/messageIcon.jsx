@@ -1,1 +1,0 @@
-export default <i className='bx bx-message-alt-detail'></i>
