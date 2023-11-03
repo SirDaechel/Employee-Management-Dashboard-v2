@@ -1,4 +1,5 @@
 import notificationsicon from "../assets/icons/notificationIcon";
+import adminPhoto from "../assets/images/adminPhoto.webp";
 
 const TopNav = () => {
   //greeting with respect to time of the day
@@ -54,7 +55,7 @@ const TopNav = () => {
         <div className="flex items-center justify-center gap-0.7">
           <img
             className="border-2 border-solid border-primarycolour rounded-br50 w-2.8 h-2.8 cursor-pointer"
-            src="src\assets\images\adminPhoto.webp"
+            src={adminPhoto}
             alt="user photo"
           />
 
