@@ -1,6 +1,6 @@
 import ProjectFinanceCard from "../Components/ProjectFinanceCard";
-import arrowup2 from "../../assets/Icons/arrowup2";
-import arrowdown2 from "../../assets/Icons/arrowdown2";
+import arrowup from "../assets/icons/triangleArrowUp";
+import arrowdown from "../assets/icons/triangleArrowDown";
 import BarChart from "../Components/Barchart";
 import StaffsCountChart from "../Components/StaffsCountChart";
 import ProjectCompletionChart from "../Components/ProjectCompletionChart";
@@ -13,7 +13,7 @@ const Home = () => {
           topText={"Net spend per project"}
           spend={"₦465.5k"}
           percentageText={"16.24%"}
-          arrow={arrowdown2}
+          arrow={arrowdown}
           percent={"red"}
         />
 
@@ -21,7 +21,7 @@ const Home = () => {
           topText={"Avg. income per project"}
           spend={"₦924k"}
           percentageText={"4.76%"}
-          arrow={arrowup2}
+          arrow={arrowup}
           percent={"green"}
         />
 
@@ -29,7 +29,7 @@ const Home = () => {
           topText={"Avg. spend per project"}
           spend={"₦101.2k"}
           percentageText={"10.45%"}
-          arrow={arrowdown2}
+          arrow={arrowdown}
           percent={"red"}
         />
 
@@ -37,7 +37,7 @@ const Home = () => {
           topText={"Total stipend payout"}
           spend={"₦189.67M"}
           percentageText={"6.91%"}
-          arrow={arrowup2}
+          arrow={arrowup}
           percent={"green"}
         />
       </div>
