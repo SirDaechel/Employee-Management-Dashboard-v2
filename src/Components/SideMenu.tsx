@@ -1,9 +1,9 @@
 import SideTab from "./SideTab.tsx";
-import dashboardicon from "../assets/Icons/dashboardicon.tsx";
-import usersicon from "../assets/Icons/usersicon.tsx";
-import cashIcon from "../assets/Icons/cashIcon.tsx";
-import helpIcon from "../assets/Icons/helpIcon.tsx";
-import projecticon from "../assets/Icons/projecticon.tsx";
+import dashboardicon from "../../assets/Icons/dashboardicon.tsx";
+import usersicon from "../../assets/Icons/usersicon.tsx";
+import cashIcon from "../../assets/Icons/cashIcon.tsx";
+import helpIcon from "../../assets/Icons/helpIcon.tsx";
+import projecticon from "../../assets/Icons/projecticon.tsx";
 
 const SideMenu = () => {
   return (
