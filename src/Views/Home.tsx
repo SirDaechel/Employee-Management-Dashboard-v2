@@ -4,7 +4,7 @@ import arrowdown from "../assets/icons/triangleArrowDown";
 import BarChart from "../Components/Barchart";
 import StaffsCountChart from "../Components/StaffsCountChart";
 import ProjectCompletionChart from "../Components/ProjectCompletionChart";
-import ProjectDeadline from "../Components/ProjectDeadline";
+// import ProjectDeadline from "../Components/ProjectDeadline";
 
 const Home = () => {
   return (
@@ -50,7 +50,7 @@ const Home = () => {
 
       <div className="flex items-start justify-start gap-12 overflow-hidden">
         <ProjectCompletionChart />
-        <ProjectDeadline />
+        {/* <ProjectDeadline /> */}
       </div>
     </section>
   );
