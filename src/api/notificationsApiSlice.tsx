@@ -2,10 +2,10 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const notificationsApiSlice = createApi({
   reducerPath: "notifications",
-  baseQuery: fetchBaseQuery({ baseUrl: "https://api.jsonserve.com" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3500" }),
   endpoints: (builder) => ({
     getNotifications: builder.query({
-      query: () => "/OakYPP",
+      query: () => "/notification",
     }),
   }),
 });

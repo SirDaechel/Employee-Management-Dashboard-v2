@@ -9,6 +9,7 @@ export default {
         primarycolour: "#6c63ff",
         darkgrey: "#272727",
         lightgrey: "#888888",
+        lightgrey2: "#f0f0f0e7",
         customred: "#ff3535",
         barchartbg: "#eaedf7",
         barcharttext: "#7091d8",
@@ -31,6 +32,7 @@ export default {
         0.62: "0.62rem",
         1.1: "1.1rem",
         1.3: "1.3rem",
+        0.4: "0.4rem",
         0.7: "0.7rem",
         2.8: "2.8rem",
         32: "32rem",
@@ -41,8 +43,12 @@ export default {
         p35: "35%",
         m35: "-35%",
       },
+      scale: {
+        102: "1.02",
+      },
       borderRadius: {
         br50: "50%",
+        px10: "10px",
       },
     },
   },

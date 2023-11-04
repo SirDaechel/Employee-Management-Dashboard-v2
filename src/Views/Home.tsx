@@ -4,6 +4,7 @@ import arrowdown from "../assets/icons/triangleArrowDown";
 import BarChart from "../Components/Barchart";
 import StaffsCountChart from "../Components/StaffsCountChart";
 import ProjectCompletionChart from "../Components/ProjectCompletionChart";
+import ProjectDeadline from "../Components/ProjectDeadline";
 
 const Home = () => {
   return (
@@ -47,8 +48,9 @@ const Home = () => {
         <StaffsCountChart />
       </div>
 
-      <div className="flex items-start justify-start gap-12">
+      <div className="flex items-start justify-start gap-12 overflow-hidden">
         <ProjectCompletionChart />
+        <ProjectDeadline />
       </div>
     </section>
   );

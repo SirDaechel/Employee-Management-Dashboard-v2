@@ -137,16 +137,16 @@ const BarChart = () => {
         </p>
 
         <div className="flex items-center justify-center gap-2.5">
-          <p className="text-0.83 font-medium bg-barchartbg text-barcharttext cursor-pointer p-1.5">
+          <p className="text-0.83 font-medium bg-barchartbg text-barcharttext cursor-pointer p-1.5 hover:bg-barcharttext hover:text-barchartbg transition">
             ALL
           </p>
-          <p className="text-0.83 font-medium bg-barchartbg text-barcharttext cursor-pointer p-1.5">
+          <p className="text-0.83 font-medium bg-barchartbg text-barcharttext cursor-pointer p-1.5 hover:bg-barcharttext hover:text-barchartbg transition">
             1M
           </p>
-          <p className="text-0.83 font-medium bg-barchartbg text-barcharttext cursor-pointer p-1.5">
+          <p className="text-0.83 font-medium bg-barchartbg text-barcharttext cursor-pointer p-1.5 hover:bg-barcharttext hover:text-barchartbg transition">
             6M
           </p>
-          <p className="text-0.83 font-medium bg-barchartbg text-barcharttext cursor-pointer p-1.5">
+          <p className="text-0.83 font-medium bg-barchartbg text-barcharttext cursor-pointer p-1.5 hover:bg-barcharttext hover:text-barchartbg transition">
             1Y
           </p>
         </div>

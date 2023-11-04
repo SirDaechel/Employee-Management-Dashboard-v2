@@ -10,3 +10,17 @@
   color: #ffffff;
   background-color: #6c63ff;
 }
+
+table {
+  width: 100%;
+  position: relative;
+  background: #fff;
+  border-radius: 0.3125rem;
+  overflow: hidden;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.6rem 1rem;
+}
