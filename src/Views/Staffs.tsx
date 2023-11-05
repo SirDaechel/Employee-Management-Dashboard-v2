@@ -1,8 +1,13 @@
-// import StaffsPageUtilities from "../Components/StaffsPageUtilities";
-// import StaffsPageTabs from "../Components/StaffsPageTabs";
+import StaffsPageUtilities from "../Components/StaffsPageUtilities";
+import StaffsPageTabs from "../Components/StaffsPageTabs";
 
 const Staffs = () => {
-  return <div>staffs</div>;
+  return (
+    <>
+      <StaffsPageUtilities />
+      <StaffsPageTabs />
+    </>
+  );
 };
 
 export default Staffs;
