@@ -3,10 +3,10 @@ import StaffsPageTabs from "../Components/StaffsPageTabs";
 
 const Staffs = () => {
   return (
-    <>
+    <section>
       <StaffsPageUtilities />
       <StaffsPageTabs />
-    </>
+    </section>
   );
 };
 
