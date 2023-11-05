@@ -4,11 +4,11 @@ import arrowdown from "../assets/icons/triangleArrowDown";
 import BarChart from "../Components/Barchart";
 import StaffsCountChart from "../Components/StaffsCountChart";
 import ProjectCompletionChart from "../Components/ProjectCompletionChart";
-import ProjectDeadline from "../Components/ProjectDeadline";
+// import ProjectDeadline from "../Components/ProjectDeadline";
 
 const Home = () => {
   return (
-    <section className="flex flex-col gap-8 mt-8">
+    <section className="flex flex-col gap-8">
       <div className="flex items-center justify-between">
         <ProjectFinanceCard
           topText={"Net spend per project"}
@@ -50,7 +50,7 @@ const Home = () => {
 
       <div className="flex items-start justify-start gap-12 overflow-hidden">
         <ProjectCompletionChart />
-        <ProjectDeadline />
+        {/* <ProjectDeadline /> */}
       </div>
     </section>
   );

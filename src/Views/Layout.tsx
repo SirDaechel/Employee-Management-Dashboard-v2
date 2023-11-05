@@ -8,7 +8,9 @@ const Layout = () => {
       <SideMenu />
       <section className="w-p87 pt-0 pr-4 pb-8 pl-0.5">
         <TopNav />
-        <Outlet />
+        <section className="mt-8">
+          <Outlet />
+        </section>
       </section>
     </main>
   );
