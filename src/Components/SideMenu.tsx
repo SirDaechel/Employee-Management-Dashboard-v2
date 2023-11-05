@@ -11,8 +11,6 @@ const SideMenu = () => {
       <nav className="w-p13 flex flex-col gap-4  pt-10.8 pr-6 pb-0 pl-6 h-screen fixed">
         <SideTab icon={dashboardicon} label={"Dashboard"} linkTo={"/"} />
 
-        <SideTab icon={usersicon} label={"Test Page"} linkTo={"testpage"} />
-
         <SideTab icon={usersicon} label={"Staffs"} linkTo={"/staffs"} />
 
         <SideTab icon={projecticon} label={"Projects"} linkTo={"/projects"} />
