@@ -7,7 +7,7 @@ import addUserIcon from "../assets/icons/addUserIcon";
 const StaffsPageUtilities = () => {
   return (
     <section className="flex items-center justify-between">
-      <SearchBar />
+      <SearchBar placeholder="Search Staffs" />
       <div className="flex gap-6 items-center justify-center">
         <Button
           icon={exportIcon}
@@ -27,6 +27,7 @@ const StaffsPageUtilities = () => {
           }
           text={"Create"}
           className="flex py-2.5 px-6 items-center justify-center gap-2.5 rounded-2xl border-px1 border-solid border-searchbarborder bg-primarycolour text-white text-0.83"
+          linkTo="addstaff"
         />
       </div>
     </section>

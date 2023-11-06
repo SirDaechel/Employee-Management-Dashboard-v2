@@ -54,7 +54,7 @@ const TableTools = () => {
 
         <div className="flex items-center justify-center gap-2.5">
           <p className="text-grey6 font-openSans text-xs font-extralight">
-            Users Per Page
+            Staffs Per Page
           </p>
 
           <div className="relative">

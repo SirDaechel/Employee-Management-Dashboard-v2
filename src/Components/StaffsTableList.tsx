@@ -16,7 +16,7 @@ const StaffsTableList = () => {
         </td>
 
         <td>
-          <p className="text-darkergrey text-0.83 font-light font-roboto w-max">
+          <p className="text-darkergrey text-0.83 font-light font-roboto w-max pl-2">
             David
           </p>
         </td>
@@ -40,19 +40,19 @@ const StaffsTableList = () => {
         </td>
 
         <td>
-          <p className="text-darkergrey text-0.83 font-light font-roboto w-max">
+          <p className="text-darkergrey text-0.83 font-light font-roboto w-max pl-2">
             $4500
           </p>
         </td>
 
         <td>
-          <p className="text-darkergrey text-0.83 font-light font-roboto w-max">
+          <p className="text-darkergrey text-0.83 font-light font-roboto w-max pl-2">
             20hrs / week
           </p>
         </td>
 
         <td>
-          <p className="text-darkergrey text-0.83 font-light font-roboto w-max">
+          <p className="text-darkergrey text-0.83 font-light font-roboto w-max pl-2">
             22 y/o
           </p>
         </td>

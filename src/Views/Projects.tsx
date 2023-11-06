@@ -1,5 +1,15 @@
+import ProjectPageUtilities from "../Components/ProjectPageUtilities";
+import ProjectsPageTabs from "../Components/ProjectsPageTabs";
+import Project from "../Components/Project";
+
 const Projects = () => {
-  return <div>Projects</div>;
+  return (
+    <section>
+      <ProjectPageUtilities />
+      <ProjectsPageTabs />
+      <Project />
+    </section>
+  );
 };
 
 export default Projects;

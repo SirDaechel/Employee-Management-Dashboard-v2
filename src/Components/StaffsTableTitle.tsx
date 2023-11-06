@@ -14,7 +14,7 @@ const StaffsTableTitle = () => {
 
         <th>
           <div className="w-fit text-left relative">
-            <div className="flex items-center justify-start gap-2.5 pl-0 cursor-pointer w-fit p-2 rounded-lg">
+            <div className="flex items-center justify-start gap-2.5 cursor-pointer w-fit p-2 rounded-lg hover:bg-grey9 hover:transition">
               <p className="text-grey6 font-poppins text-0.83 font-light">
                 Name
               </p>
@@ -59,7 +59,7 @@ const StaffsTableTitle = () => {
 
         <th>
           <div className="w-fit text-left relative">
-            <div className="flex items-center justify-start gap-2.5 pl-0 cursor-pointer w-fit p-2 rounded-lg">
+            <div className="flex items-center justify-start gap-2.5 cursor-pointer w-fit p-2 rounded-lg hover:bg-grey9 hover:transition">
               <p className="text-grey6 font-poppins text-0.83 font-light">
                 Wage
               </p>
@@ -82,7 +82,7 @@ const StaffsTableTitle = () => {
 
         <th>
           <div className="w-fit text-left relative">
-            <div className="flex items-center justify-start gap-2.5 pl-0 cursor-pointer w-fit p-2 rounded-lg">
+            <div className="flex items-center justify-start gap-2.5 cursor-pointer w-fit p-2 rounded-lg hover:bg-grey9 hover:transition">
               <p className="text-grey6 font-poppins text-0.83 font-light">
                 Hours
               </p>
@@ -105,7 +105,7 @@ const StaffsTableTitle = () => {
 
         <th>
           <div className="w-fit text-left relative">
-            <div className="flex items-center justify-start gap-2.5 pl-0 cursor-pointer w-fit p-2 rounded-lg">
+            <div className="flex items-center justify-start gap-2.5 cursor-pointer w-fit p-2 rounded-lg hover:bg-grey9 hover:transition">
               <p className="text-grey6 font-poppins text-0.83 font-light">
                 Age
               </p>

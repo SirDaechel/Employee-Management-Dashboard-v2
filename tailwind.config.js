@@ -7,6 +7,7 @@ export default {
         customgrey: "#7e7e7e",
         bodycolour: "#f5f5f5",
         primarycolour: "#6c63ff",
+        hoverprimarycolour: "#7091d8",
         darkgrey: "#272727",
         darkergrey: "#1d1929",
         lightgrey: "#888888",
@@ -19,7 +20,14 @@ export default {
         grey6: "#ababab",
         grey7: "#d6d6d6",
         grey8: "#57575a",
+        grey9: "#a7a7a72d",
+        grey10: "#3b3b3b",
+        grey11: "#a7a7a7",
+        grey12: "#e2e2e2",
         white2: "#f7f8fa",
+        white3: "#e0e0e0",
+        white4: "#fcfcfc",
+        red2: "rgb(221, 20, 20)",
       },
       fontFamily: {
         roboto: "'Roboto', sans-serif",
@@ -33,6 +41,7 @@ export default {
         0.625: "0.625rem",
         0.68: "0.68rem",
         0.7: "0.7rem",
+        0.9: "0.9rem",
       },
       spacing: {
         10.8: "10.8rem",
@@ -63,8 +72,12 @@ export default {
         p140: "140%",
         m35: "-35%",
         m140: "-140%",
+        m10: "-10%",
         m20: "-20%",
+        px3: "3px",
+        px15: "15px",
         px17: "17px",
+        px26: "26px",
       },
       scale: {
         102: "1.02",
@@ -75,6 +88,7 @@ export default {
         brp125: "1.25rem",
         0.45: "0.45rem",
         0.625: "0.625rem",
+        px5: "5px",
         px10: "10px",
       },
       borderWidth: {
@@ -89,8 +103,13 @@ export default {
         p120: "120%",
       },
       zIndex: {
+        1: "1",
         5: "5",
+        100: "100",
         1000: "1000", //test
+      },
+      gridTemplateColumns: {
+        r21fr: "repeat(2, 1fr)",
       },
     },
   },
