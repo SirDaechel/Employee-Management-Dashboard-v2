@@ -1,15 +1,16 @@
 import StaffsPageUtilities from "../Components/StaffsPageUtilities";
-import StaffsPageTabs from "../Components/StaffsPageTabs";
+import Tabs from "../Components/Tabs";
 import TableTools from "../Components/TableTools";
-import StaffsTable from "../Components/StaffsTable";
+import Table from "../Components/Table";
 
 const Staffs = () => {
+  const staffsTabs = ["All Staffs", "Archived", "Recycle Bin"];
   return (
     <>
       <StaffsPageUtilities />
-      <StaffsPageTabs />
+      <Tabs tabsText={staffsTabs} />
       <TableTools />
-      <StaffsTable />
+      <Table />
     </>
   );
 };

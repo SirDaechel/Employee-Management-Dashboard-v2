@@ -1,12 +1,19 @@
 import ProjectPageUtilities from "../Components/ProjectPageUtilities";
-import ProjectsPageTabs from "../Components/ProjectsPageTabs";
+import Tabs from "../Components/Tabs";
 import Project from "../Components/Project";
 
 const Projects = () => {
+  const projectsTabs: string[] = [
+    "All Projects",
+    "Pending",
+    "In Prgress",
+    "Testing",
+    "Completed",
+  ];
   return (
     <section>
       <ProjectPageUtilities />
-      <ProjectsPageTabs />
+      <Tabs tabsText={projectsTabs} />
       <Project />
     </section>
   );

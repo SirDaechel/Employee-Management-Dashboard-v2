@@ -24,10 +24,12 @@ export default {
         grey10: "#3b3b3b",
         grey11: "#a7a7a7",
         grey12: "#e2e2e2",
+        grey13: "#555",
         white2: "#f7f8fa",
         white3: "#e0e0e0",
         white4: "#fcfcfc",
         red2: "rgb(221, 20, 20)",
+        colour1: "#aec8ff31",
       },
       fontFamily: {
         roboto: "'Roboto', sans-serif",
@@ -55,8 +57,10 @@ export default {
         0.6: "0.6rem",
         0.7: "0.7rem",
         2.8: "2.8rem",
+        18.9788: "18.9788rem",
         32: "32rem",
         25.5: "25.5rem",
+        3.7: "3.7rem",
         3.2: "3.2rem",
         p2: "2%",
         p5: "5%",
@@ -78,6 +82,7 @@ export default {
         px15: "15px",
         px17: "17px",
         px26: "26px",
+        px150: "150px",
       },
       scale: {
         102: "1.02",
@@ -88,6 +93,7 @@ export default {
         brp125: "1.25rem",
         0.45: "0.45rem",
         0.625: "0.625rem",
+        px3: "3px",
         px5: "5px",
         px10: "10px",
       },
@@ -99,17 +105,26 @@ export default {
         custom: "0 0 10px rgba(0, 0, 0, 0.411)",
         custom2: "0px 4px 4px 0px rgba(85, 85, 85, 0.25)",
       },
+      maxWidth: {
+        35.4: "35.4rem",
+      },
       minWidth: {
         p120: "120%",
       },
+      minHeight: {
+        3.7: "3.7rem",
+        px150: "150px",
+      },
       zIndex: {
         1: "1",
+        2: "2",
         5: "5",
         100: "100",
         1000: "1000", //test
       },
       gridTemplateColumns: {
         r21fr: "repeat(2, 1fr)",
+        r31fr: "repeat(3, 1fr)",
       },
     },
   },

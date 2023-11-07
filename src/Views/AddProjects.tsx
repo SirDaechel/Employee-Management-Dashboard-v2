@@ -1,6 +1,10 @@
 import InputBox from "../Components/InputBox";
+import TextArea from "../Components/TextArea";
+import BtnDropdown from "../Components/BtnDropdown";
+import DateInput from "../Components/DateInput";
+import TagsInput from "../Components/TagsInput";
 
-const AddProjects = () => {
+const AddProjects: React.FC = () => {
   return (
     <section>
       <p className="font-poppins text-base font-normal">Projects Details</p>
@@ -15,34 +19,24 @@ const AddProjects = () => {
             inputType="text"
           />
 
-          <InputBox
-            label="Project Description:"
-            htmlFor="projectdescription"
-            inputType="text"
-          />
+          <TextArea />
 
-          <InputBox
+          <BtnDropdown
             label="Project Category:"
-            htmlFor="projectcategory"
-            inputType="text"
+            text="Select Product Category --"
           />
 
-          <InputBox
-            label="Assign Project To:"
-            htmlFor="assignprojectto"
-            inputType="text"
-          />
+          <BtnDropdown label="Assign Project To:" text="Assign Project To --" />
 
-          <InputBox label="Start Date:" htmlFor="startdate" inputType="text" />
+          <DateInput label="Start Date" projectDate="Enter Start Date --" />
 
-          <InputBox label="End Date:" htmlFor="enddate" inputType="text" />
+          <DateInput label="End Date" projectDate="Enter End Date --" />
         </section>
 
         <section className="flex flex-col gap-8 mt-6">
-          <InputBox
+          <BtnDropdown
             label="Project Priority:"
-            htmlFor="projectpriority"
-            inputType="text"
+            text="Select Project Priority"
           />
 
           <InputBox
@@ -51,11 +45,7 @@ const AddProjects = () => {
             inputType="text"
           />
 
-          <InputBox
-            label="Project Stack"
-            htmlFor="projectstack"
-            inputType="text"
-          />
+          <TagsInput />
 
           <button
             onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
