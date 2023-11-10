@@ -10,12 +10,12 @@ const SideTab = ({ icon, label, linkTo }: SideBarProps) => {
   return (
     <NavLink
       to={linkTo}
-      className="flex items-center gap-0.62 text-customgrey p-0.62 rounded-lg cursor-pointer m:block"
+      className="flex items-center gap-0.62 text-customgrey p-0.62 rounded-lg cursor-pointer"
     >
-      <span className="flex items-center justify-center text-1.2 m:hidden">
+      <span className="flex items-center justify-center text-1.2 m:text-3xl">
         {icon}
       </span>
-      <p className="text-0.83 font-medium">{label}</p>
+      <p className="text-0.83 font-medium m:hidden">{label}</p>
     </NavLink>
   );
 };

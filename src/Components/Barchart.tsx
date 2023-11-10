@@ -152,7 +152,7 @@ const BarChart = () => {
         </div>
       </div>
 
-      <Bar data={data} options={options}></Bar>
+      <Bar data={data} options={options} className="m:overflow-scroll"></Bar>
 
       <div className="flex items-center justify-center gap-4 mt-8">
         <div className="flex items-center justify-center gap-2.5">
