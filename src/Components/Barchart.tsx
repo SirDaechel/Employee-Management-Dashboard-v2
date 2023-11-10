@@ -83,9 +83,9 @@ const BarChart = () => {
 
     maintainAspectRatio: true,
 
-    aspectRatio: isScreenWidth <= 767 ? 0.9 : 2,
+    aspectRatio: isScreenWidth <= 767 ? 1 : 2,
 
-    // indexAxis: "y",
+    // indexAxis: "y"
 
     scales: {
       x: {
@@ -130,9 +130,9 @@ const BarChart = () => {
   };
 
   return (
-    <section className="w-p65 h-32 bg-white rounded p-4">
+    <section className="w-p65 h-32 bg-white rounded p-4 m:w-full">
       <div className="flex items-center justify-between mb-8">
-        <p className="text-base font-medium font-poppins text-darkgrey">
+        <p className="text-base font-medium font-poppins text-darkgrey m:text-sm">
           Revenue against Expense
         </p>
 

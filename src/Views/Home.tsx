@@ -9,7 +9,7 @@ import ProjectCompletionChart from "../Components/ProjectCompletionChart";
 const Home = () => {
   return (
     <section className="flex flex-col gap-8">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between m:flex-col m:gap-4">
         <ProjectFinanceCard
           topText={"Net spend per project"}
           spend={"₦465.5k"}
@@ -43,7 +43,7 @@ const Home = () => {
         />
       </div>
 
-      <div className="flex items-start justify-between gap-4 overflow-hidden">
+      <div className="flex items-start justify-between gap-4 overflow-hidden m:flex-col">
         <BarChart />
         <StaffsCountChart />
       </div>

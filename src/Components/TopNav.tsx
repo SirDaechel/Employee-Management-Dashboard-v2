@@ -59,7 +59,7 @@ const TopNav = () => {
             alt="user photo"
           />
 
-          <article className="flex flex-col font-poppins text-0.7 text-darkgrey">
+          <article className="flex flex-col font-poppins text-0.7 text-darkgrey m:hidden">
             <p className="font-semibold">David Okpala</p>
             <p>Administrator</p>
           </article>
