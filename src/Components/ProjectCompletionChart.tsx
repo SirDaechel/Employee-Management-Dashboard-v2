@@ -19,7 +19,7 @@ ChartJS.register(
   Tooltip
 );
 
-const ProjectCompletionChart = () => {
+const ProjectCompletionChart: React.FC = () => {
   const isScreenWidth = window.innerWidth;
 
   const data: ChartData<"doughnut"> = {

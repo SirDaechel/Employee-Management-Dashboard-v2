@@ -6,7 +6,7 @@ type PlaceholderType = {
   placeholder: string;
 };
 
-const SearchBar = ({ placeholder }: PlaceholderType) => {
+const SearchBar: React.FC<PlaceholderType> = ({ placeholder }) => {
   const [query, setQuery] = useState("");
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {

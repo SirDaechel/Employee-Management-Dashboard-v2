@@ -1,7 +1,7 @@
 import notificationsicon from "../assets/icons/notificationIcon";
 import adminPhoto from "../assets/images/adminPhoto.webp";
 
-const TopNav = () => {
+const TopNav: React.FC = () => {
   //greeting with respect to time of the day
   const getGreeting = () => {
     const currentTime = new Date().getHours();

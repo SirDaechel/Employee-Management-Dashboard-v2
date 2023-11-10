@@ -2,7 +2,7 @@ import Button from "../Components/Button";
 import SearchBar from "../Components/SearchBar";
 import plusIcon from "../assets/icons/plusIcon";
 
-const ProjectPageUtilities = () => {
+const ProjectPageUtilities: React.FC = () => {
   return (
     <div className="flex items-center justify-between m:gap-4">
       <SearchBar placeholder="Search Projects" />

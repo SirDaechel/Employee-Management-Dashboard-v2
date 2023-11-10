@@ -1,4 +1,4 @@
-const PayrollTitle = () => {
+const PayrollTitle: React.FC = () => {
   return (
     <thead className="border-b-px2 border-b-solid border-b-bodycolour">
       <tr>

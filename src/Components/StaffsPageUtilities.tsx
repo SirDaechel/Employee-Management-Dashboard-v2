@@ -4,7 +4,7 @@ import exportIcon from "../assets/icons/exportIcon";
 import printIcon from "../assets/icons/printIcon";
 import addUserIcon from "../assets/icons/addUserIcon";
 
-const StaffsPageUtilities = () => {
+const StaffsPageUtilities: React.FC = () => {
   return (
     <section className="flex items-center justify-between m:flex-col m:gap-4">
       <SearchBar placeholder="Search Staffs" />

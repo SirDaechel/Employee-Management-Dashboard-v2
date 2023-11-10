@@ -6,8 +6,8 @@ type TabsType = {
 
 const Tabs: React.FC<TabsType> = ({ tabsText }) => {
   return (
-    <section className="py-4 px-0">
-      <button className="hidden m:flex m:items-center m:justify-center m:gap-4 m:w-full m:bg-customgrey m:text-white m:font-roboto m:py-0.6 m:border-px1 m:border-solid m:border-searchbarborder m:rounded-lg m:mb-4">
+    <section className="pt-4 px-0">
+      <button className="hidden m:flex m:items-center m:justify-center m:gap-4 m:w-full m:bg-transparent m:text-customgrey m:font-roboto m:py-0.6 m:border-px1 m:border-solid m:border-customgrey m:rounded-lg m:mb-4 hover:bg-customgrey hover:text-white hover:transition">
         <span>{filterIcon}</span>
         <p>Filter by</p>
       </button>

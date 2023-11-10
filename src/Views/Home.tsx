@@ -6,7 +6,7 @@ import StaffsCountChart from "../Components/StaffsCountChart";
 import ProjectCompletionChart from "../Components/ProjectCompletionChart";
 // import ProjectDeadline from "../Components/ProjectDeadline";
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <section className="flex flex-col gap-8">
       <div className="flex items-center justify-between m:flex-col m:gap-4">

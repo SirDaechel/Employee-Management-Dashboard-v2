@@ -5,7 +5,7 @@ type BtnDropdownType = {
   text: string;
 };
 
-const BtnDropdown = ({ label, text }: BtnDropdownType) => {
+const BtnDropdown: React.FC<BtnDropdownType> = ({ label, text }) => {
   return (
     <section className="relative w-full">
       <div className="font-poppins font-normal text-customgrey text-sm">

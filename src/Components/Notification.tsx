@@ -1,7 +1,7 @@
 import teamIcon from "../assets/icons/teamIcon";
 import avatar1 from "../assets/images/avatar (1).webp";
 
-const Notification = () => {
+const Notification: React.FC = () => {
   return (
     <section className="flex items-start justify-start pb-4 gap-4 border-b-px1 border-b-solid border-b-white3">
       <img

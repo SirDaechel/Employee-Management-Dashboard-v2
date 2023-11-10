@@ -1,7 +1,7 @@
 import arrowdownIcon from "../assets/icons/arrowdownIcon";
 import arrowupIcon from "../assets/icons/arrowupIcon";
 
-const StaffsTableTitle = () => {
+const StaffsTableTitle: React.FC = () => {
   return (
     <thead className="border-b-px2 border-b-solid border-b-bodycolour">
       <tr>

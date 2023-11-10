@@ -4,7 +4,7 @@ type InputType = {
   inputType: string;
 };
 
-const InputBox = ({ label, htmlFor, inputType }: InputType) => {
+const InputBox: React.FC<InputType> = ({ label, htmlFor, inputType }) => {
   return (
     <article className="flex flex-col">
       <label

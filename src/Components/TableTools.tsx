@@ -5,7 +5,7 @@ import trashIcon from "../assets/icons/trashIcon";
 import mailIcon from "../assets/icons/mailIcon";
 import arrowdownIcon from "../assets/icons/arrowdownIcon";
 
-const TableTools = () => {
+const TableTools: React.FC = () => {
   return (
     <div className="flex items-center justify-between w-full mb-0.62">
       <p className="text-grey6 font-openSans text-xs font-extralight m:hidden">

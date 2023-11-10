@@ -1,8 +1,8 @@
 import Notification from "./Notification";
 
-const NotificationBar = () => {
+const NotificationBar: React.FC = () => {
   return (
-    <aside className="fixed right-0 top-0 h-screen w-p27 bg-white py-4 px-5 z-100 overflow-y-auto hidden">
+    <aside className="fixed right-0 top-0 h-screen w-p27 bg-white py-4 px-5 z-100 overflow-y-auto hidden m:w-full">
       <div className="relative h-full">
         <div className="relative">
           <div className="flex items-center justify-between mb-8">

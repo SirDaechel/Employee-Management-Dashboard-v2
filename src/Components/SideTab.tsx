@@ -6,7 +6,7 @@ type SideBarProps = {
   linkTo: any;
 };
 
-const SideTab = ({ icon, label, linkTo }: SideBarProps) => {
+const SideTab: React.FC<SideBarProps> = ({ icon, label, linkTo }) => {
   return (
     <NavLink
       to={linkTo}

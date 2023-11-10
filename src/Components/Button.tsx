@@ -7,7 +7,7 @@ type ButtonProp = {
   linkTo?: string;
 };
 
-const Button = ({ icon, text, className, linkTo }: ButtonProp) => {
+const Button: React.FC<ButtonProp> = ({ icon, text, className, linkTo }) => {
   return (
     <Link to={linkTo ? linkTo : ""} className={className}>
       {icon}

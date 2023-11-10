@@ -1,7 +1,7 @@
 import doubleleftarrowIcon from "../assets/icons/doubleleftarrowIcon";
 import doublerightarrowIcon from "../assets/icons/doublerightarrowIcon";
 
-const Pagination = () => {
+const Pagination: React.FC = () => {
   return (
     <div className="flex items-center justify-center w-full relative my-6 h-12">
       <ul className="bg-white2 shadow-custom rounded-2xl flex py-0.2 px-2 justify-center items-center w-fit">

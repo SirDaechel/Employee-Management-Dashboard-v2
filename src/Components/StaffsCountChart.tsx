@@ -20,7 +20,7 @@ ChartJS.register(
   Tooltip
 );
 
-const HeadCountPieChart = () => {
+const HeadCountPieChart: React.FC = () => {
   const isScreenWidth = window.innerWidth;
 
   const data: ChartData<"doughnut"> = {

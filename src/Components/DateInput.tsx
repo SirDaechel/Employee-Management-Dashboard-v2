@@ -5,7 +5,7 @@ type DateInputType = {
   projectDate: string;
 };
 
-const DateInput = ({ label, projectDate }: DateInputType) => {
+const DateInput: React.FC<DateInputType> = ({ label, projectDate }) => {
   return (
     <div className="w-full relative">
       <div className="font-poppins font-normal text-customgrey text-sm">

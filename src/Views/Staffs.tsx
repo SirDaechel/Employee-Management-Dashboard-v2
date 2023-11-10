@@ -4,7 +4,7 @@ import TableTools from "../Components/TableTools";
 import Table from "../Components/Table";
 import Pagination from "../Components/Pagination";
 
-const Staffs = () => {
+const Staffs: React.FC = () => {
   const staffsTabs = ["All Staffs", "Archived", "Recycle Bin"];
   return (
     <>

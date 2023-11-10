@@ -21,7 +21,7 @@ ChartJS.register(
   Tooltip
 );
 
-const BarChart = () => {
+const BarChart: React.FC = () => {
   const isScreenWidth = window.innerWidth;
 
   const data: ChartData<"bar"> = {

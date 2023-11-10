@@ -1,4 +1,4 @@
-const PayrollList = () => {
+const PayrollList: React.FC = () => {
   return (
     <tbody>
       <tr>

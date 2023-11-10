@@ -4,7 +4,7 @@ import avatar1 from "../assets/images/avatar (1).webp";
 import avatar2 from "../assets/images/avatar (2).webp";
 import avatar3 from "../assets/images/avatar (3).webp";
 
-const Project = () => {
+const Project: React.FC = () => {
   return (
     <div className="flex flex-col gap-4 w-64 h-fit bg-white rounded-lg p-0.7 relative cursor-pointer">
       <div className="flex items-center justify-between">

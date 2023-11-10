@@ -2,7 +2,7 @@ import walletIcon from "../assets/icons/walletIcon";
 
 const PayrollDate = () => {
   return (
-    <div className="bg-white h-18.9788 p-8 rounded flex items-center justify-center w-p29">
+    <div className="bg-white h-18.9788 p-8 rounded flex items-center justify-center w-p29 m:w-full">
       <div className="w-full flex flex-col items-center justify-center gap-4">
         <div className="flex items-center justify-center w-4 h-4 text-5xl border-px1 border-solid border-primarycolour bg-colour1 rounded-br50 p-9 text-primarycolour">
           {walletIcon}

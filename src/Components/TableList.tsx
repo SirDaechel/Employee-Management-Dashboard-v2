@@ -4,7 +4,7 @@ import timeIcon from "../assets/icons/timeIcon";
 import trashIcon from "../assets/icons/trashIcon";
 import restoreIcon from "../assets/icons/restoreIcon";
 
-const StaffsTableList = () => {
+const StaffsTableList: React.FC = () => {
   return (
     <tbody>
       <tr>

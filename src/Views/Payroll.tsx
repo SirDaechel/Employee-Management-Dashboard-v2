@@ -13,8 +13,8 @@ import Pagination from "../Components/Pagination";
 const Payroll = () => {
   return (
     <div className="flex flex-col items-start justify-center gap-8">
-      <div className="w-full flex items-center justify-between gap-4">
-        <div className="grid grid-cols-r31fr items-center justify-start gap-4">
+      <div className="w-full flex items-center justify-between gap-4 m:flex-col">
+        <div className="grid grid-cols-r31fr items-center justify-start gap-4 m:flex m:flex-col m:w-full">
           <PayrollMetricCard
             topText={"Total Staffs"}
             icon={userIcon}

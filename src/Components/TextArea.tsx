@@ -1,4 +1,4 @@
-const TextArea = () => {
+const TextArea: React.FC = () => {
   return (
     <div className="w-full">
       <p className="font-poppins font-normal text-customgrey text-sm">

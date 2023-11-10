@@ -8,13 +8,13 @@ type ProjectFinanceProps = {
   percent: string;
 };
 
-const ProjectFinanceCard = ({
+const ProjectFinanceCard: React.FC<ProjectFinanceProps> = ({
   topText,
   spend,
   percentageText,
   arrow,
   percent,
-}: ProjectFinanceProps) => {
+}) => {
   return (
     <section className="bg-white p-4 w-64 rounded hover:scale-102 hover:transition m:w-full">
       <div className="flex items-center justify-between mb-1.3">

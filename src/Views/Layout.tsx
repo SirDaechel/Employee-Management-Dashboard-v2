@@ -3,7 +3,7 @@ import TopNav from "../Components/TopNav";
 import SideMenu from "../Components/SideMenu";
 import NotificationBar from "../Components/NotificationBar";
 
-const Layout = () => {
+const Layout: React.FC = () => {
   return (
     <main className="flex gap-4 m:flex-col">
       <SideMenu />
