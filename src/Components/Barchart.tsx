@@ -46,18 +46,18 @@ const BarChart = () => {
         backgroundColor: "#6b63ffc2",
         borderRadius: 2,
         barPercentage: 0.8,
-        barThickness: 22,
+        barThickness: isScreenWidth <= 767 ? 10 : 22,
         minBarLength: 7,
         // stack: "combined",
       },
 
       {
         label: "Expense",
-        data: [14, 9, 15, 15, 9, 11, 20, 22, 13, 31, 8, 20],
+        data: [14, 10, 15, 15, 9, 11, 20, 22, 13, 31, 8, 20],
         backgroundColor: "#F7B84B",
         borderRadius: 2,
         barPercentage: 0.8,
-        barThickness: 22,
+        barThickness: isScreenWidth <= 767 ? 10 : 22,
         minBarLength: 7,
         // stack: "combined",
       },
@@ -83,7 +83,7 @@ const BarChart = () => {
 
     maintainAspectRatio: true,
 
-    aspectRatio: isScreenWidth <= 767 ? 1 : 2,
+    aspectRatio: isScreenWidth <= 767 ? 1.05 : 2,
 
     // indexAxis: "y"
 
@@ -130,9 +130,9 @@ const BarChart = () => {
   };
 
   return (
-    <section className="w-p65 h-32 bg-white rounded p-4 m:w-full">
-      <div className="flex items-center justify-between mb-8">
-        <p className="text-base font-medium font-poppins text-darkgrey m:text-sm">
+    <section className="w-p65 h-32 bg-white rounded p-4 m:w-full m:h-fit">
+      <div className="flex items-center justify-between mb-8 gap-4">
+        <p className="text-base font-medium font-poppins text-darkgrey">
           Revenue against Expense
         </p>
 
@@ -152,7 +152,7 @@ const BarChart = () => {
         </div>
       </div>
 
-      <Bar data={data} options={options} className="m:overflow-scroll"></Bar>
+      <Bar data={data} options={options}></Bar>
 
       <div className="flex items-center justify-center gap-4 mt-8">
         <div className="flex items-center justify-center gap-2.5">

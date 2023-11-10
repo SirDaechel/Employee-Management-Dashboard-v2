@@ -91,7 +91,7 @@ const ProjectCompletionChart = () => {
   };
 
   return (
-    <section className="relative w-80 h-25.5 bg-white rounded p-4">
+    <section className="relative w-80 h-25.5 bg-white rounded p-4 m:w-full m:h-fit">
       <p className="text-base font-medium font-poppins text-darkgrey mb-4">
         Project Completion Rate
       </p>

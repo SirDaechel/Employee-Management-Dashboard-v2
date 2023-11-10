@@ -140,7 +140,7 @@ const HeadCountPieChart = () => {
   };
 
   return (
-    <div className="relative w-p35 h-32 bg-white rounded p-4 overflow-y-auto m:w-full">
+    <div className="relative w-p35 h-32 bg-white rounded p-4 overflow-y-auto m:w-full m:h-fit">
       <div className="flex items-center justify-between mb-8">
         <p className="text-base font-medium font-poppins text-darkgrey">
           Employee Summary

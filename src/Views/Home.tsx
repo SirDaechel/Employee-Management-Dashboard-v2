@@ -48,7 +48,7 @@ const Home = () => {
         <StaffsCountChart />
       </div>
 
-      <div className="flex items-start justify-start gap-12 overflow-hidden">
+      <div className="flex items-start justify-start gap-12 overflow-hidden m:flex-col">
         <ProjectCompletionChart />
         {/* <ProjectDeadline /> */}
       </div>
