@@ -2,7 +2,7 @@ import ProjectPageUtilities from "../Components/ProjectPageUtilities";
 import Tabs from "../Components/Tabs";
 import Project from "../Components/Project";
 
-const Projects = () => {
+const Projects: React.FC = () => {
   const projectsTabs: string[] = [
     "All Projects",
     "Pending",

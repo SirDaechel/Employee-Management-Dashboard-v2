@@ -6,9 +6,9 @@ const AddNewStaffs: React.FC = () => {
       <p className="font-poppins text-base font-normal">Add New Staff</p>
       <form
         onSubmit={(e) => e.preventDefault}
-        className="grid items-start justify-between gap-8 grid-cols-r21fr"
+        className="grid items-start justify-between gap-8 grid-cols-r21fr m:flex m:flex-col m:w-full"
       >
-        <section className="flex flex-col gap-8 mt-6">
+        <section className="flex flex-col gap-8 mt-6 m:w-full">
           <InputBox label="First Name:" htmlFor="firstname" inputType="text" />
 
           <InputBox label="Last Name:" htmlFor="lastname" inputType="text" />
@@ -22,7 +22,7 @@ const AddNewStaffs: React.FC = () => {
           <InputBox label="Age:" htmlFor="age" inputType="number" />
         </section>
 
-        <section className="flex flex-col gap-8 mt-6">
+        <section className="flex flex-col gap-8 mt-6 m:w-full m:mt-0">
           <InputBox label="Phone:" htmlFor="phone" inputType="tel" />
 
           <InputBox label="Working Hours:" htmlFor="hours" inputType="number" />

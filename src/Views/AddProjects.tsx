@@ -10,9 +10,9 @@ const AddProjects: React.FC = () => {
       <p className="font-poppins text-base font-normal">Projects Details</p>
       <form
         onSubmit={(e) => e.preventDefault}
-        className="grid items-start justify-between gap-8 grid-cols-r21fr"
+        className="grid items-start justify-between gap-8 grid-cols-r21fr m:flex m:flex-col"
       >
-        <section className="flex flex-col gap-8 mt-6">
+        <section className="flex flex-col gap-8 mt-6 m:w-full">
           <InputBox
             label="Project Name:"
             htmlFor="projectname"
@@ -33,7 +33,7 @@ const AddProjects: React.FC = () => {
           <DateInput label="End Date" projectDate="Enter End Date --" />
         </section>
 
-        <section className="flex flex-col gap-8 mt-6">
+        <section className="flex flex-col gap-8 mt-6 m:w-full m:mt-0">
           <BtnDropdown
             label="Project Priority:"
             text="Select Project Priority"

@@ -14,8 +14,8 @@ const SearchBar = ({ placeholder }: PlaceholderType) => {
   };
 
   return (
-    <section className="w-fit">
-      <div className="relative flex">
+    <section className="w-fit m:w-full">
+      <div className="relative m:w-full">
         <div className="absolute left-p5 top-p29 font-light text-xl">
           {searchIcon}
         </div>
@@ -23,7 +23,7 @@ const SearchBar = ({ placeholder }: PlaceholderType) => {
         <form>
           <input
             type="text"
-            className="flex pt-3 pr-10 pb-3 pl-3.2 justify-center items-center rounded-brp125 border-px1 border-solid border-searchbarborder bg-white w-80 text-darkergrey font-roboto text-sm font-extralight"
+            className="pt-3 pr-10 pb-3 pl-3.2 justify-center items-center rounded-brp125 border-px1 border-solid border-searchbarborder bg-white text-darkergrey font-roboto text-sm font-extralight m:w-full m:pr-12"
             value={query}
             placeholder={placeholder}
             onChange={(e) => handleInputChange(e)}

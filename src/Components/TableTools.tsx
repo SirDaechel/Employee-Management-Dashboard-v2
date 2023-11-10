@@ -8,11 +8,11 @@ import arrowdownIcon from "../assets/icons/arrowdownIcon";
 const TableTools = () => {
   return (
     <div className="flex items-center justify-between w-full mb-0.62">
-      <p className="text-grey6 font-openSans text-xs font-extralight">
+      <p className="text-grey6 font-openSans text-xs font-extralight m:hidden">
         Showing 10-10 result
       </p>
 
-      <div className="flex items-center justify-center gap-8">
+      <div className="flex items-center justify-center gap-8 m:justify-between m:w-full">
         <div className="relative flex items-center justify-center gap-8">
           <div className="relative flex flex-col items-center justify-center gap-3">
             <div className="relative">
@@ -26,7 +26,7 @@ const TableTools = () => {
               </button>
             </div>
 
-            <div className="absolute top-0 right-p120 bg-white py-0.7 px-0.6 rounded-lg shadow-custom z-10 min-w-p120 overflow-hidden transition hidden">
+            <div className="absolute top-0 right-p120 bg-white py-0.7 px-0.6 rounded-lg shadow-custom z-10 min-w-p120 overflow-hidden transition m:left-p110 hidden">
               <ul className="flex flex-col gap-1 text-0.83 overflow-hidden">
                 <li className="py-1.5 px-0.3 flex items-center justify-start gap-2.5">
                   <div className="text-sm scale-125">{restoreIcon}</div>

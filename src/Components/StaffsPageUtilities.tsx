@@ -6,9 +6,9 @@ import addUserIcon from "../assets/icons/addUserIcon";
 
 const StaffsPageUtilities = () => {
   return (
-    <section className="flex items-center justify-between">
+    <section className="flex items-center justify-between m:flex-col m:gap-4">
       <SearchBar placeholder="Search Staffs" />
-      <div className="flex gap-6 items-center justify-center">
+      <div className="flex gap-6 items-center justify-center m:justify-between">
         <Button
           icon={exportIcon}
           text={"Export"}

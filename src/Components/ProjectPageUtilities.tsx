@@ -4,7 +4,7 @@ import plusIcon from "../assets/icons/plusIcon";
 
 const ProjectPageUtilities = () => {
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex items-center justify-between m:gap-4">
       <SearchBar placeholder="Search Projects" />
       <Button
         icon={
