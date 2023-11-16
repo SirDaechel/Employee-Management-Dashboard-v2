@@ -139,17 +139,38 @@ const HeadCountPieChart: React.FC = () => {
     },
   };
 
+  const textCenter = {
+    id: "textCenter",
+    beforeDatasetsDraw(chart: any) {
+      const { ctx } = chart;
+
+      ctx.save(),
+        (ctx.font = "normal 1rem Poppins"),
+        (ctx.fillStyle = "#272727"),
+        (ctx.textAlign = "center"),
+        (ctx.textBaseline = "middle"),
+        ctx.fillText(
+          "Staffs: 60",
+          chart.getDatasetMeta(0).data[0].x,
+          chart.getDatasetMeta(0).data[0].y
+        );
+    },
+  };
+
   return (
     <div className="relative w-p35 h-32 bg-white rounded p-4 overflow-y-auto m:w-full m:h-fit">
       <div className="flex items-center justify-between mb-8">
         <p className="text-base font-medium font-poppins text-darkgrey">
           Employee Summary
         </p>
-
-        {/* <p className="total_staff">Total Staffs: {users.length}</p> */}
       </div>
 
-      <Doughnut height="300" data={data} options={options}></Doughnut>
+      <Doughnut
+        // height="300"
+        data={data}
+        options={options}
+        plugins={[textCenter]}
+      ></Doughnut>
     </div>
   );
 };

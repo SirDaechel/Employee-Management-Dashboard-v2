@@ -6,7 +6,6 @@ const ProjectDeadline: React.FC = () => {
     isLoading,
     isSuccess,
     isError,
-    error,
   } = useGetProjectsQuery({});
 
   let content;
@@ -49,9 +48,8 @@ const ProjectDeadline: React.FC = () => {
         <td className="text-sm font-roboto">{project.priority}</td>
       </tr>
     ));
-  } else if (isError) {
-    content = { error };
   }
+
   return (
     <section className="h-fit bg-white flex-grow m:max-w-full m:overflow-x-scroll">
       <table className="max-h-fit m:w-max">
@@ -81,6 +79,11 @@ const ProjectDeadline: React.FC = () => {
 
         <tbody>{content}</tbody>
       </table>
+      {isError && (
+        <p className="bg-white p-4 text-red-500 text-center">
+          Error while fetching data. Make sure you have internet connection!
+        </p>
+      )}
     </section>
   );
 };

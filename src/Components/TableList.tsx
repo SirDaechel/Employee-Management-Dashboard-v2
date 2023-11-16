@@ -4,56 +4,75 @@ import timeIcon from "../assets/icons/timeIcon";
 import trashIcon from "../assets/icons/trashIcon";
 import restoreIcon from "../assets/icons/restoreIcon";
 
-const StaffsTableList: React.FC = () => {
-  return (
-    <tbody>
+type TableListType = {
+  data: [];
+  isSuccess: boolean;
+  isLoading: boolean;
+};
+
+const StaffsTableList: React.FC<TableListType> = ({
+  data,
+  isSuccess,
+  isLoading,
+}) => {
+  let tableList;
+
+  if (isLoading) {
+    tableList = (
       <tr>
+        <td className="flex items-center justify-center">Loading...</td>
+      </tr>
+    );
+  } else if (isSuccess) {
+    tableList = data.map((d: any) => (
+      <tr key={d.id}>
         <td>
           <input
             className="flex w-6 h-6 rounded-lg border-px1 border-solid border-searchbarborder bg-white2 text-left"
             type="checkbox"
+            id={d.id}
           />
         </td>
 
         <td>
           <p className="text-darkergrey text-0.83 font-light font-roboto w-max pl-2">
-            David
+            {d.name}
           </p>
         </td>
 
         <td>
           <p className="text-darkergrey text-0.83 font-light font-roboto w-max">
-            davidokpala768gmail.com
+            {d.email}
           </p>
         </td>
 
         <td>
           <p className="text-darkergrey text-0.83 font-light font-roboto w-max">
-            Admin
+            {d.role}
           </p>
         </td>
 
         <td>
           <p className="text-darkergrey text-0.83 font-light font-roboto w-max">
-            08125672822
+            {d.phone}
           </p>
         </td>
 
         <td>
           <p className="text-darkergrey text-0.83 font-light font-roboto w-max pl-2">
-            $4500
+            ${d.wage}
           </p>
         </td>
 
         <td>
           <p className="text-darkergrey text-0.83 font-light font-roboto w-max pl-2">
-            20hrs / week
+            {d.workinghours} / week
           </p>
         </td>
 
         <td>
           <p className="text-darkergrey text-0.83 font-light font-roboto w-max pl-2">
-            22 y/o
+            {d.age} y/o
           </p>
         </td>
 
@@ -87,8 +106,10 @@ const StaffsTableList: React.FC = () => {
           </div>
         </td>
       </tr>
-    </tbody>
-  );
+    ));
+  }
+
+  return <tbody>{tableList}</tbody>;
 };
 
 export default StaffsTableList;

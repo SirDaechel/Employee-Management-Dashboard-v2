@@ -16,7 +16,6 @@ export default {
         lightgrey3: "#dbd9fa",
         customred: "#ff3535",
         barchartbg: "#eaedf7",
-        barcharttext: "#7091d8",
         lightorange: "#f7b84b",
         searchbarborder: "#e9e9ea",
         grey6: "#ababab",
