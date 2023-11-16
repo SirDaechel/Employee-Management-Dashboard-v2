@@ -7,23 +7,12 @@ import restoreIcon from "../assets/icons/restoreIcon";
 type TableListType = {
   data: [];
   isSuccess: boolean;
-  isLoading: boolean;
 };
 
-const StaffsTableList: React.FC<TableListType> = ({
-  data,
-  isSuccess,
-  isLoading,
-}) => {
+const StaffsTableList: React.FC<TableListType> = ({ data, isSuccess }) => {
   let tableList;
 
-  if (isLoading) {
-    tableList = (
-      <tr>
-        <td className="flex items-center justify-center">Loading...</td>
-      </tr>
-    );
-  } else if (isSuccess) {
+  if (isSuccess) {
     tableList = data.map((d: any) => (
       <tr key={d.id}>
         <td>

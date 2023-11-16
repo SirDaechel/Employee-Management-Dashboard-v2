@@ -10,13 +10,7 @@ const ProjectDeadline: React.FC = () => {
 
   let content;
 
-  if (isLoading) {
-    content = (
-      <tr>
-        <td className="flex items-center justify-center">Loading...</td>
-      </tr>
-    );
-  } else if (isSuccess) {
+  if (isSuccess) {
     content = projects.map((project: any) => (
       <tr key={project.projectName}>
         <td className="text-sm font-roboto">{project.projectName}</td>
@@ -79,6 +73,7 @@ const ProjectDeadline: React.FC = () => {
 
         <tbody>{content}</tbody>
       </table>
+      {isLoading && <p className="bg-white p-4 text-center">Loading...</p>}
       {isError && (
         <p className="bg-white p-4 text-red-500 text-center">
           Error while fetching data. Make sure you have internet connection!
