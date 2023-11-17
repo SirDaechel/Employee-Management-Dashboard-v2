@@ -1,14 +1,14 @@
-import PayrollMetricCard from "../Components/PayrollMetricCard";
+import PayrollMetricCard from "../components/PayrollMetricCard";
 import triangleArrowUp from "../assets/icons/triangleArrowUp";
 import triangleArrowDown from "../assets/icons/triangleArrowDown";
 import userIcon from "../assets/icons/userIcon";
-import PayrollDate from "../Components/PayrollDate";
-import SearchBar from "../Components/SearchBar";
-import PayrollTable from "../Components/PayrollTable";
+import PayrollDate from "../components/PayrollDate";
+import SearchBar from "../components/SearchBar";
+import PayrollTable from "../components/PayrollTable";
 import walletIcon from "../assets/icons/walletIcon";
 import timeIcon from "../assets/icons/timeIcon";
 import cashIcon2 from "../assets/icons/cashIcon2";
-import Pagination from "../Components/Pagination";
+import Pagination from "../components/Pagination";
 
 const Payroll = () => {
   return (

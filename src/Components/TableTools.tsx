@@ -4,8 +4,14 @@ import timeIcon from "../assets/icons/timeIcon";
 import trashIcon from "../assets/icons/trashIcon";
 import mailIcon from "../assets/icons/mailIcon";
 import arrowdownIcon from "../assets/icons/arrowdownIcon";
+// import { useSelector } from "react-redux";
+// import { RootState } from "../App/Store";
 
 const TableTools: React.FC = () => {
+  // const { staffsPerPage } = useSelector(
+  //   (store: RootState) => store.staffsPerPage
+  // );
+
   return (
     <div className="flex items-center justify-between w-full mb-0.62">
       <p className="text-grey6 font-openSans text-0.83 font-extralight m:hidden">

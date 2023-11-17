@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { staffsApiSlice } from "../api/staffsApiSlice";
-import { projectsApiSlice } from "../api/projectsApiSlice";
-import { notificationsApiSlice } from "../api/notificationsApiSlice";
-import { helpdeskApiSlice } from "../api/helpdeskApiSlice";
-import StaffsPerPageReducer from "./Features/DataPerPage/StaffsPerPageSlice";
+import { staffsApiSlice } from "../data/staffsApiSlice";
+import { projectsApiSlice } from "../data/projectsApiSlice";
+import { notificationsApiSlice } from "../data/notificationsApiSlice";
+import { helpdeskApiSlice } from "../data/helpdeskApiSlice";
+// import StaffsPerPageReducer from "../src/App/Features/DataPerPage/StaffsPerPageSlice";
 
 export const store = configureStore({
   reducer: {
@@ -11,7 +11,7 @@ export const store = configureStore({
     [projectsApiSlice.reducerPath]: projectsApiSlice.reducer,
     [notificationsApiSlice.reducerPath]: notificationsApiSlice.reducer,
     [helpdeskApiSlice.reducerPath]: helpdeskApiSlice.reducer,
-    staffsPerPage: StaffsPerPageReducer,
+    // staffsPerPage: StaffsPerPageReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
@@ -21,3 +21,5 @@ export const store = configureStore({
       helpdeskApiSlice.middleware
     ),
 });
+
+export type RootState = ReturnType<typeof store.getState>;

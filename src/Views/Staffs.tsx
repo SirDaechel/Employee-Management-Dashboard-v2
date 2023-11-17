@@ -1,15 +1,22 @@
-import StaffsPageUtilities from "../Components/StaffsPageUtilities";
-import Tabs from "../Components/Tabs";
-import TableTools from "../Components/TableTools";
-import Table from "../Components/Table";
-import Pagination from "../Components/Pagination";
+import StaffsPageUtilities from "../components/StaffsPageUtilities";
+import Tabs from "../components/Tabs";
+import TableTools from "../components/TableTools";
+import Table from "../components/Table";
+import Pagination from "../components/Pagination";
+import { useGetStaffsQuery } from "../data/staffsApiSlice";
 
 const Staffs: React.FC = () => {
-  const staffsTabs = ["All Staffs", "Archived", "Recycle Bin"];
+  const { data: staffs, isSuccess } = useGetStaffsQuery({});
+  const staffsTabs = [
+    { title: "All Staffs", length: isSuccess && staffs.length },
+    { title: "Archived", length: isSuccess && staffs.length },
+    { title: "Recycle Bin", length: isSuccess && staffs.length },
+  ];
+
   return (
     <>
       <StaffsPageUtilities />
-      <Tabs tabsText={staffsTabs} />
+      <Tabs tabsData={staffsTabs} />
       <TableTools />
       <Table />
       <Pagination />

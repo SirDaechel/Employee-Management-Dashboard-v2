@@ -1,6 +1,6 @@
-import ProjectPageUtilities from "../Components/ProjectPageUtilities";
-import Tabs from "../Components/Tabs";
-import Project from "../Components/Project";
+import ProjectPageUtilities from "../components/ProjectPageUtilities";
+import Tabs from "../components/Tabs";
+import Project from "../components/Project";
 
 const Projects: React.FC = () => {
   const projectsTabs: string[] = [
@@ -13,7 +13,7 @@ const Projects: React.FC = () => {
   return (
     <section>
       <ProjectPageUtilities />
-      <Tabs tabsText={projectsTabs} />
+      <Tabs tabsData={projectsTabs} />
       <Project />
     </section>
   );

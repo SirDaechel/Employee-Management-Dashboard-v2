@@ -1,10 +1,10 @@
-import ProjectFinanceCard from "../Components/ProjectFinanceCard";
+import ProjectFinanceCard from "../components/ProjectFinanceCard";
 import arrowup from "../assets/icons/triangleArrowUp";
 import arrowdown from "../assets/icons/triangleArrowDown";
-import BarChart from "../Components/Barchart";
-import StaffsCountChart from "../Components/StaffsCountChart";
-import ProjectCompletionChart from "../Components/ProjectCompletionChart";
-import ProjectDeadline from "../Components/ProjectDeadline";
+import BarChart from "../components/Barchart";
+import StaffsCountChart from "../components/StaffsCountChart";
+import ProjectCompletionChart from "../components/ProjectCompletionChart";
+import ProjectDeadline from "../components/ProjectDeadline";
 
 const Home: React.FC = () => {
   return (

@@ -5,63 +5,76 @@ import trashIcon from "../assets/icons/trashIcon";
 import restoreIcon from "../assets/icons/restoreIcon";
 
 type TableListType = {
-  data: [];
-  isSuccess: boolean;
+  id: string;
+  name: string;
+  email: string;
+  role: string;
+  phone: string;
+  wage: number;
+  workinghours: number;
+  age: number;
 };
 
-const StaffsTableList: React.FC<TableListType> = ({ data, isSuccess }) => {
-  let tableList;
-
-  if (isSuccess) {
-    tableList = data.map((d: any) => (
-      <tr key={d.id}>
+const StaffsTableList: React.FC<TableListType> = ({
+  id,
+  name,
+  email,
+  role,
+  phone,
+  wage,
+  workinghours,
+  age,
+}) => {
+  return (
+    <tbody>
+      <tr key={id}>
         <td>
           <input
+            id={id}
             className="flex w-6 h-6 rounded-lg border-px1 border-solid border-searchbarborder bg-white2 text-left"
             type="checkbox"
-            id={d.id}
           />
         </td>
 
         <td>
           <p className="text-darkergrey text-0.83 font-light font-roboto w-max pl-2">
-            {d.name}
+            {name}
           </p>
         </td>
 
         <td>
           <p className="text-darkergrey text-0.83 font-light font-roboto w-max">
-            {d.email}
+            {email}
           </p>
         </td>
 
         <td>
           <p className="text-darkergrey text-0.83 font-light font-roboto w-max">
-            {d.role}
+            {role}
           </p>
         </td>
 
         <td>
           <p className="text-darkergrey text-0.83 font-light font-roboto w-max">
-            {d.phone}
+            {phone}
           </p>
         </td>
 
         <td>
           <p className="text-darkergrey text-0.83 font-light font-roboto w-max pl-2">
-            ${d.wage}
+            ${wage}
           </p>
         </td>
 
         <td>
           <p className="text-darkergrey text-0.83 font-light font-roboto w-max pl-2">
-            {d.workinghours} / week
+            {workinghours} / week
           </p>
         </td>
 
         <td>
           <p className="text-darkergrey text-0.83 font-light font-roboto w-max pl-2">
-            {d.age} y/o
+            {age} y/o
           </p>
         </td>
 
@@ -95,10 +108,8 @@ const StaffsTableList: React.FC<TableListType> = ({ data, isSuccess }) => {
           </div>
         </td>
       </tr>
-    ));
-  }
-
-  return <tbody>{tableList}</tbody>;
+    </tbody>
+  );
 };
 
 export default StaffsTableList;

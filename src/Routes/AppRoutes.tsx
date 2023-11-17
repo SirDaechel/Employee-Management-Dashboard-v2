@@ -1,12 +1,12 @@
 import { Routes, Route } from "react-router-dom";
-import Layout from "../Views/Layout";
-import Home from "../Views/Home";
-import Staffs from "../Views/Staffs";
-import Projects from "../Views/Projects";
-import Payroll from "../Views/Payroll";
-import HelpDesk from "../Views/HelpDesk";
-import AddNewStaffs from "../Views/AddNewStaffs";
-import AddProjects from "../Views/AddProjects";
+import Layout from "../views/Layout";
+import Home from "../views/Home";
+import Staffs from "../views/Staffs";
+import Projects from "../views/Projects";
+import Payroll from "../views/Payroll";
+import HelpDesk from "../views/HelpDesk";
+import AddNewStaffs from "../views/AddNewStaffs";
+import AddProjects from "../views/AddProjects";
 
 const AppRoutes = () => {
   return (
