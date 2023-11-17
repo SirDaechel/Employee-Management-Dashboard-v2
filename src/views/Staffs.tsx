@@ -8,11 +8,10 @@ import { useGetStaffsQuery } from "../data/staffsApiSlice";
 const Staffs: React.FC = () => {
   const { data: staffs, isSuccess } = useGetStaffsQuery({});
   const staffsTabs = [
-    { title: "All Staffs", length: isSuccess && staffs.length },
-    { title: "Archived", length: isSuccess && staffs.length },
-    { title: "Recycle Bin", length: isSuccess && staffs.length },
+    { id: "1", title: "All Staffs", length: isSuccess && staffs.length },
+    { id: "2", title: "Archived", length: isSuccess && staffs.length },
+    { id: "3", title: "Recycle Bin", length: isSuccess && staffs.length },
   ];
-
   return (
     <>
       <StaffsPageUtilities />
