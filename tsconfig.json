@@ -7,7 +7,6 @@
     "skipLibCheck": true,
 
     /* Bundler mode */
-    "forceConsistentCasingInFileNames": true,
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
@@ -27,8 +26,7 @@
     "src/components",
     "src/views",
     "src/data",
-    "src/store",
-    "src/store/Store.ts"
+    "src/store"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
