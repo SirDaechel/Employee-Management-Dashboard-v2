@@ -19,13 +19,12 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "baseUrl": "./src"
+    "noFallthroughCasesInSwitch": true
   },
   "include": [
     "src",
     "src/routes",
-    "src/components",
+    "src/components/",
     "src/views",
     "src/data",
     "src/store"
