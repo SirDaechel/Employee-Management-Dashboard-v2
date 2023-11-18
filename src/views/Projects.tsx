@@ -1,4 +1,4 @@
-import ProjectPageUtilities from "../components/ProjectPageUtilities";
+import ProjectPageUtilities from "../components/utility/ProjectPageUtilities";
 import Tabs from "../components/ui/Tabs";
 import Project from "../components/card/Project";
 

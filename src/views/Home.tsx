@@ -4,7 +4,7 @@ import arrowdown from "../assets/icons/triangleArrowDown";
 import BarChart from "../components/chart/Barchart";
 import StaffsCountChart from "../components/chart/StaffsCountChart";
 import ProjectCompletionChart from "../components/chart/ProjectCompletionChart";
-import ProjectDeadline from "../components/ProjectDeadline";
+import ProjectDeadline from "../components/table/ProjectDeadline";
 
 const Home: React.FC = () => {
   return (

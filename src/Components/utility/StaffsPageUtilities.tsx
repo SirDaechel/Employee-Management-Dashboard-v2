@@ -1,8 +1,8 @@
-import SearchBar from "./ui/SearchBar";
-import Button from "./ui/Button";
-import exportIcon from "../assets/icons/exportIcon";
-import printIcon from "../assets/icons/printIcon";
-import addUserIcon from "../assets/icons/addUserIcon";
+import SearchBar from "../ui/SearchBar";
+import Button from "../ui/Button";
+import exportIcon from "../../assets/icons/exportIcon";
+import printIcon from "../../assets/icons/printIcon";
+import addUserIcon from "../../assets/icons/addUserIcon";
 
 const StaffsPageUtilities: React.FC = () => {
   return (

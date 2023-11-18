@@ -1,4 +1,4 @@
-import StaffsPageUtilities from "../components/StaffsPageUtilities";
+import StaffsPageUtilities from "../components/utility/StaffsPageUtilities";
 import Tabs from "../components/ui/Tabs";
 import TableTools from "../components/table/TableTools";
 import Table from "../components/table/Table";
