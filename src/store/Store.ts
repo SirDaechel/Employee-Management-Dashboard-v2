@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { staffsApiSlice } from "../data/staffsApiSlice";
-import { projectsApiSlice } from "../data/projectsApiSlice";
-import { notificationsApiSlice } from "../data/notificationsApiSlice";
-import { helpdeskApiSlice } from "../data/helpdeskApiSlice";
+import { staffsApiSlice } from "../features/staffs/data/staffsApiSlice";
+import { projectsApiSlice } from "../features/projects/data/projectsApiSlice";
+import { notificationsApiSlice } from "../features/notifications/data/notificationsApiSlice";
+import { helpdeskApiSlice } from "../features/helpdesk/data/helpdeskApiSlice";
 // import StaffsPerPageReducer from "../src/App/Features/DataPerPage/StaffsPerPageSlice";
 
 export const store = configureStore({

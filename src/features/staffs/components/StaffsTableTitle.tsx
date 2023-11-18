@@ -1,5 +1,5 @@
-import arrowdownIcon from "../../assets/icons/arrowdownIcon";
-import arrowupIcon from "../../assets/icons/arrowupIcon";
+import arrowdownIcon from "../../../assets/icons/arrowdownIcon";
+import arrowupIcon from "../../../assets/icons/arrowupIcon";
 
 const StaffsTableTitle: React.FC = () => {
   return (

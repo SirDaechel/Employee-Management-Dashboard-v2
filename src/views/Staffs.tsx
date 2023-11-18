@@ -1,9 +1,9 @@
-import StaffsPageUtilities from "../components/utility/StaffsPageUtilities";
+import StaffsPageUtilities from "../features/staffs/components/StaffsPageUtilities";
 import Tabs from "../components/ui/Tabs";
-import TableTools from "../components/table/TableTools";
-import Table from "../components/table/Table";
+import StaffsTableTools from "../features/staffs/components/StaffsTableTools";
+import StaffsTable from "../features/staffs/components/StaffsTable";
 import Pagination from "../components/ui/Pagination";
-import { useGetStaffsQuery } from "../data/staffsApiSlice";
+import { useGetStaffsQuery } from "../features/staffs/data/staffsApiSlice";
 
 const Staffs: React.FC = () => {
   const { data: staffs, isSuccess } = useGetStaffsQuery({});
@@ -16,8 +16,8 @@ const Staffs: React.FC = () => {
     <>
       <StaffsPageUtilities />
       <Tabs tabsData={staffsTabs} />
-      <TableTools />
-      <Table />
+      <StaffsTableTools />
+      <StaffsTable />
       <Pagination />
     </>
   );

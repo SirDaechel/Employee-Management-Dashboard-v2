@@ -1,10 +1,10 @@
-import ProjectFinanceCard from "../components/card/ProjectFinanceCard";
+import ProjectFinanceCard from "../features/projects/components/ProjectFinanceCard";
 import arrowup from "../assets/icons/triangleArrowUp";
 import arrowdown from "../assets/icons/triangleArrowDown";
-import BarChart from "../components/chart/Barchart";
-import StaffsCountChart from "../components/chart/StaffsCountChart";
-import ProjectCompletionChart from "../components/chart/ProjectCompletionChart";
-import ProjectDeadline from "../components/table/ProjectDeadline";
+import Finance from "../components/chart/Finance";
+import StaffsCountChart from "../components/chart/StaffsCount";
+import ProjectStatus from "../components/chart/ProjectStatus";
+import ProjectDeadline from "../features/projects/components/ProjectDeadline";
 
 const Home: React.FC = () => {
   return (
@@ -44,12 +44,12 @@ const Home: React.FC = () => {
       </div>
 
       <div className="flex items-start justify-between gap-4 overflow-hidden m:flex-col">
-        <BarChart />
+        <Finance />
         <StaffsCountChart />
       </div>
 
       <div className="flex items-start justify-start gap-12 overflow-hidden m:flex-col">
-        <ProjectCompletionChart />
+        <ProjectStatus />
         <ProjectDeadline />
       </div>
     </section>

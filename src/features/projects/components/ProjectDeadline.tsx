@@ -1,4 +1,4 @@
-import { useGetProjectsQuery } from "../../data/projectsApiSlice";
+import { useGetProjectsQuery } from "../data/projectsApiSlice";
 
 const ProjectDeadline: React.FC = () => {
   const {

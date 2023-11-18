@@ -1,6 +1,6 @@
 import SearchBar from "../components/ui/SearchBar";
 import Tabs from "../components/ui/Tabs";
-import Ticket from "../components/card/Ticket";
+import Ticket from "../features/helpdesk/components/Ticket";
 
 const HelpDesk = () => {
   const helpdeskTabs: string[] = ["Tickets", "Opened", "In Prgress", "Closed"];

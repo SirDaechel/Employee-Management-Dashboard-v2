@@ -1,4 +1,4 @@
-import Notification from "./Notification";
+import Notification from "../../features/notifications/components/Notification";
 
 const NotificationBar: React.FC = () => {
   return (

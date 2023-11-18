@@ -1,8 +1,8 @@
-import moreoptionsIcon from "../../assets/icons/moreoptionsIcon";
-import editIcon from "../../assets/icons/editIcon";
-import timeIcon from "../../assets/icons/timeIcon";
-import trashIcon from "../../assets/icons/trashIcon";
-import restoreIcon from "../../assets/icons/restoreIcon";
+import moreoptionsIcon from "../../../assets/icons/moreoptionsIcon";
+import editIcon from "../../../assets/icons/editIcon";
+import timeIcon from "../../../assets/icons/timeIcon";
+import trashIcon from "../../../assets/icons/trashIcon";
+import restoreIcon from "../../../assets/icons/restoreIcon";
 
 type TableListType = {
   id: string;

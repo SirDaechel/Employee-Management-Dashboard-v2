@@ -1,6 +1,6 @@
-import TableTitle from "./TableTitle";
-import TableList from "./TableList";
-import { useGetStaffsQuery } from "../../data/staffsApiSlice";
+import StaffsTableTitle from "./StaffsTableTitle";
+import StaffsTableList from "./StaffsTableList";
+import { useGetStaffsQuery } from "../data/staffsApiSlice";
 
 const StaffsTable = () => {
   const { data: staffs, isSuccess, isLoading, isError } = useGetStaffsQuery({});
@@ -8,9 +8,11 @@ const StaffsTable = () => {
   return (
     <section className="w-full overflow-x-auto relative">
       <table>
-        <TableTitle />
+        <StaffsTableTitle />
         {isSuccess &&
-          staffs.map((staff: any) => <TableList key={staff.id} {...staff} />)}
+          staffs.map((staff: any) => (
+            <StaffsTableList key={staff.id} {...staff} />
+          ))}
       </table>
       {isSuccess && staffs.length < 1 && (
         <p className="bg-white p-4 text-center">No data to display</p>

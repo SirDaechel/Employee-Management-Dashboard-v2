@@ -1,6 +1,6 @@
-import ProjectPageUtilities from "../components/utility/ProjectPageUtilities";
+import ProjectPageUtilities from "../features/projects/components/ProjectPageUtilities";
 import Tabs from "../components/ui/Tabs";
-import Project from "../components/card/Project";
+import Project from "../features/projects/components/Project";
 
 const Projects: React.FC = () => {
   const projectsTabs: string[] = [
