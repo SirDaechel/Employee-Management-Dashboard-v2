@@ -1,5 +1,5 @@
-import moreoptionsIcon2 from "../assets/icons/moreoptionsIcon2";
-import trashIcon from "../assets/icons/trashIcon";
+import moreoptionsIcon2 from "../../assets/icons/moreoptionsIcon2";
+import trashIcon from "../../assets/icons/trashIcon";
 
 const Ticket: React.FC = () => {
   return (

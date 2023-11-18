@@ -1,5 +1,5 @@
-import Button from "./Button";
-import SearchBar from "./SearchBar";
+import Button from "./ui/Button";
+import SearchBar from "./ui/SearchBar";
 import plusIcon from "../assets/icons/plusIcon";
 
 const ProjectPageUtilities: React.FC = () => {

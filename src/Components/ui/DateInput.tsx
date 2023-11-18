@@ -1,4 +1,4 @@
-import calendarIcon from "../assets/icons/calendarIcon";
+import calendarIcon from "../../assets/icons/calendarIcon";
 
 type DateInputType = {
   label: string;

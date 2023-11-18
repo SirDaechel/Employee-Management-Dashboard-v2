@@ -1,6 +1,6 @@
 import { useState } from "react";
-import searchIcon from "../assets/icons/searchIcon";
-import xIcon from "../assets/icons/xIcon";
+import searchIcon from "../../assets/icons/searchIcon";
+import xIcon from "../../assets/icons/xIcon";
 
 type PlaceholderType = {
   placeholder: string;

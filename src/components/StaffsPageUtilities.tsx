@@ -1,5 +1,5 @@
-import SearchBar from "./SearchBar";
-import Button from "./Button";
+import SearchBar from "./ui/SearchBar";
+import Button from "./ui/Button";
 import exportIcon from "../assets/icons/exportIcon";
 import printIcon from "../assets/icons/printIcon";
 import addUserIcon from "../assets/icons/addUserIcon";

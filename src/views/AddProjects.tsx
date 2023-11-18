@@ -1,8 +1,8 @@
-import InputBox from "../components/InputBox";
-import TextArea from "../components/TextArea";
-import BtnDropdown from "../components/BtnDropdown";
-import DateInput from "../components/DateInput";
-import TagsInput from "../components/TagsInput";
+import InputBox from "../components/ui/InputBox";
+import TextArea from "../components/ui/TextArea";
+import BtnDropdown from "../components/ui/BtnDropdown";
+import DateInput from "../components/ui/DateInput";
+import TagsInput from "../components/ui/TagsInput";
 
 const AddProjects: React.FC = () => {
   return (

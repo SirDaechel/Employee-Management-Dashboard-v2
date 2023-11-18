@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import TopNav from "../components/TopNav";
-import SideMenu from "../components/SideMenu";
-import NotificationBar from "../components/NotificationBar";
+import TopNav from "../components/layout/TopNav";
+import SideMenu from "../components/layout/SideMenu";
+import NotificationBar from "../components/layout/NotificationBar";
 
 const Layout: React.FC = () => {
   return (

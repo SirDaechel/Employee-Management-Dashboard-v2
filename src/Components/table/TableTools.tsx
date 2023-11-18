@@ -1,9 +1,9 @@
-import flagIcon from "../assets/icons/flagIcon";
-import restoreIcon from "../assets/icons/restoreIcon";
-import timeIcon from "../assets/icons/timeIcon";
-import trashIcon from "../assets/icons/trashIcon";
-import mailIcon from "../assets/icons/mailIcon";
-import arrowdownIcon from "../assets/icons/arrowdownIcon";
+import flagIcon from "../../assets/icons/flagIcon";
+import restoreIcon from "../../assets/icons/restoreIcon";
+import timeIcon from "../../assets/icons/timeIcon";
+import trashIcon from "../../assets/icons/trashIcon";
+import mailIcon from "../../assets/icons/mailIcon";
+import arrowdownIcon from "../../assets/icons/arrowdownIcon";
 // import { useSelector } from "react-redux";
 // import { RootState } from "../App/Store";
 

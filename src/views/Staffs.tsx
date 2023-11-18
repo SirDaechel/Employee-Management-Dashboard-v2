@@ -1,8 +1,8 @@
 import StaffsPageUtilities from "../components/StaffsPageUtilities";
-import Tabs from "../components/Tabs";
-import TableTools from "../components/TableTools";
-import Table from "../components/Table";
-import Pagination from "../components/Pagination";
+import Tabs from "../components/ui/Tabs";
+import TableTools from "../components/table/TableTools";
+import Table from "../components/table/Table";
+import Pagination from "../components/ui/Pagination";
 import { useGetStaffsQuery } from "../data/staffsApiSlice";
 
 const Staffs: React.FC = () => {

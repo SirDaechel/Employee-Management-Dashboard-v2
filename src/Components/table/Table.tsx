@@ -1,6 +1,6 @@
 import TableTitle from "./TableTitle";
 import TableList from "./TableList";
-import { useGetStaffsQuery } from "../data/staffsApiSlice";
+import { useGetStaffsQuery } from "../../data/staffsApiSlice";
 
 const StaffsTable = () => {
   const { data: staffs, isSuccess, isLoading, isError } = useGetStaffsQuery({});

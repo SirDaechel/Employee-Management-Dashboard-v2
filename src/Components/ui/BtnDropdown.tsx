@@ -1,4 +1,4 @@
-import arrowdownIcon from "../assets/icons/arrowdownIcon";
+import arrowdownIcon from "../../assets/icons/arrowdownIcon";
 
 type BtnDropdownType = {
   label: string;

@@ -1,8 +1,8 @@
-import moreoptionsIcon2 from "../assets/icons/moreoptionsIcon2";
-import trashIcon from "../assets/icons/trashIcon";
-import avatar1 from "../assets/images/avatar (1).webp";
-import avatar2 from "../assets/images/avatar (2).webp";
-import avatar3 from "../assets/images/avatar (3).webp";
+import moreoptionsIcon2 from "../../assets/icons/moreoptionsIcon2";
+import trashIcon from "../../assets/icons/trashIcon";
+import avatar1 from "../../assets/images/avatar (1).webp";
+import avatar2 from "../../assets/images/avatar (2).webp";
+import avatar3 from "../../assets/images/avatar (3).webp";
 
 const Project: React.FC = () => {
   return (

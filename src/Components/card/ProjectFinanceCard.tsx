@@ -1,4 +1,4 @@
-import moneyIcon from "../assets/icons/cashIcon2";
+import moneyIcon from "../../assets/icons/cashIcon2";
 
 type ProjectFinanceProps = {
   topText: string;

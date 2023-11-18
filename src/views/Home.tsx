@@ -1,9 +1,9 @@
-import ProjectFinanceCard from "../components/ProjectFinanceCard";
+import ProjectFinanceCard from "../components/card/ProjectFinanceCard";
 import arrowup from "../assets/icons/triangleArrowUp";
 import arrowdown from "../assets/icons/triangleArrowDown";
-import BarChart from "../components/Barchart";
-import StaffsCountChart from "../components/StaffsCountChart";
-import ProjectCompletionChart from "../components/ProjectCompletionChart";
+import BarChart from "../components/chart/Barchart";
+import StaffsCountChart from "../components/chart/StaffsCountChart";
+import ProjectCompletionChart from "../components/chart/ProjectCompletionChart";
 import ProjectDeadline from "../components/ProjectDeadline";
 
 const Home: React.FC = () => {

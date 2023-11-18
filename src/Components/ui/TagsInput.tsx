@@ -1,4 +1,4 @@
-import xIcon from "../assets/icons/xIcon";
+import xIcon from "../../assets/icons/xIcon";
 
 const TagsInput: React.FC = () => {
   return (

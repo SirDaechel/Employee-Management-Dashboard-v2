@@ -1,5 +1,5 @@
-import notificationsicon from "../assets/icons/notificationIcon";
-import adminPhoto from "../assets/images/adminPhoto.webp";
+import notificationsicon from "../../assets/icons/notificationIcon";
+import adminPhoto from "../../assets/images/adminPhoto.webp";
 
 const TopNav: React.FC = () => {
   //greeting with respect to time of the day

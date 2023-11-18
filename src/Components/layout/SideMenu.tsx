@@ -1,9 +1,9 @@
 import SideTab from "./SideTab.tsx";
-import dashboardicon from "../assets/icons/dashboardIcon.tsx";
-import usersicon from "../assets/icons/userBadgeIcon.tsx";
-import cashIcon from "../assets/icons/cashIcon.tsx";
-import helpIcon from "../assets/icons/helpIcon.tsx";
-import projecticon from "../assets/icons/briefcaseIcon.tsx";
+import dashboardicon from "../../assets/icons/dashboardIcon.tsx";
+import usersicon from "../../assets/icons/userBadgeIcon.tsx";
+import cashIcon from "../../assets/icons/cashIcon.tsx";
+import helpIcon from "../../assets/icons/helpIcon.tsx";
+import projecticon from "../../assets/icons/briefcaseIcon.tsx";
 
 const SideMenu: React.FC = () => {
   return (

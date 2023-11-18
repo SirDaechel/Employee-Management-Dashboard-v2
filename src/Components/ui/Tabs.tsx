@@ -1,4 +1,4 @@
-import filterIcon from "../assets/icons/filterIcon";
+import filterIcon from "../../assets/icons/filterIcon";
 
 type TabsType = {
   tabsData: any[];

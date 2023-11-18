@@ -1,4 +1,4 @@
-import InputBox from "../components/InputBox";
+import InputBox from "../components/ui/InputBox";
 
 const AddNewStaffs: React.FC = () => {
   return (

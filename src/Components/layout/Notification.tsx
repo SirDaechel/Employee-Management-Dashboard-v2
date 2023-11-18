@@ -1,5 +1,5 @@
-import teamIcon from "../assets/icons/teamIcon";
-import avatar1 from "../assets/images/avatar (1).webp";
+import teamIcon from "../../assets/icons/teamIcon";
+import avatar1 from "../../assets/images/avatar (1).webp";
 
 const Notification: React.FC = () => {
   return (

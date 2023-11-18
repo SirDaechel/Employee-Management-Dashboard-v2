@@ -1,4 +1,4 @@
-import walletIcon from "../assets/icons/walletIcon";
+import walletIcon from "../../assets/icons/walletIcon";
 
 const PayrollDate = () => {
   return (

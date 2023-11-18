@@ -1,5 +1,5 @@
-import doubleleftarrowIcon from "../assets/icons/doubleleftarrowIcon";
-import doublerightarrowIcon from "../assets/icons/doublerightarrowIcon";
+import doubleleftarrowIcon from "../../assets/icons/doubleleftarrowIcon";
+import doublerightarrowIcon from "../../assets/icons/doublerightarrowIcon";
 
 const Pagination: React.FC = () => {
   return (
