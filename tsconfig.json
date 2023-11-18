@@ -24,7 +24,10 @@
   "include": [
     "src",
     "src/routes",
-    "src/components/",
+    "src/components",
+    "src/components/chart",
+    "src/components/layout",
+    "src/components/ui",
     "src/views",
     "src/data",
     "src/store"
