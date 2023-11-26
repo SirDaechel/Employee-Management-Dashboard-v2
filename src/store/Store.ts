@@ -3,7 +3,7 @@ import { staffsApiSlice } from "../features/staffs/data/staffsApiSlice";
 import { projectsApiSlice } from "../features/projects/data/projectsApiSlice";
 import { notificationsApiSlice } from "../features/notifications/data/notificationsApiSlice";
 import { helpdeskApiSlice } from "../features/helpdesk/data/helpdeskApiSlice";
-// import StaffsPerPageReducer from "../src/App/Features/DataPerPage/StaffsPerPageSlice";
+import StaffsPerPageReducer from "./StaffsPerPageSlice";
 
 export const store = configureStore({
   reducer: {
@@ -11,7 +11,7 @@ export const store = configureStore({
     [projectsApiSlice.reducerPath]: projectsApiSlice.reducer,
     [notificationsApiSlice.reducerPath]: notificationsApiSlice.reducer,
     [helpdeskApiSlice.reducerPath]: helpdeskApiSlice.reducer,
-    // staffsPerPage: StaffsPerPageReducer,
+    StaffsPerPage: StaffsPerPageReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(

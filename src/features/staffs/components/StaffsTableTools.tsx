@@ -4,18 +4,39 @@ import timeIcon from "../../../assets/icons/timeIcon";
 import trashIcon from "../../../assets/icons/trashIcon";
 import mailIcon from "../../../assets/icons/mailIcon";
 import arrowdownIcon from "../../../assets/icons/arrowdownIcon";
-// import { useSelector } from "react-redux";
-// import { RootState } from "../App/Store";
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { modifyPageSize } from "../../../store/StaffsPerPageSlice";
+import { selectStaffPageSize } from "../../../store/StaffsPerPageSlice";
+import { useGetStaffsQuery } from "../data/staffsApiSlice";
 
 const TableTools: React.FC = () => {
-  // const { staffsPerPage } = useSelector(
-  //   (store: RootState) => store.staffsPerPage
-  // );
+  // save the current staffsPerPage value
+  const pageSize = useSelector(selectStaffPageSize);
+  const { staffsPerPage } = pageSize;
+
+  const dispatch = useDispatch();
+
+  const [pageSizeNumber, setPageSizeNumber] = useState<number>(10);
+
+  // handle page size change
+  const handleChangePageSize = (e: React.MouseEvent<HTMLParagraphElement>) => {
+    if (e.currentTarget.textContent) {
+      setPageSizeNumber(Number(e.currentTarget.textContent));
+    }
+  };
+
+  // update the staffsPerPage global state when the pageSizeNumber state changes
+  useEffect(() => {
+    dispatch(modifyPageSize(pageSizeNumber));
+  }, [pageSizeNumber]);
+
+  const { data: staffs, isSuccess } = useGetStaffsQuery({});
 
   return (
     <div className="flex items-center justify-between w-full mb-0.62">
       <p className="text-grey6 font-openSans text-0.83 font-extralight m:hidden">
-        Showing 10-10 result
+        {isSuccess && `Showing ${staffsPerPage}-${staffs.length} result`}
       </p>
 
       <div className="flex items-center justify-center gap-8 m:justify-between m:w-full">
@@ -65,39 +86,54 @@ const TableTools: React.FC = () => {
 
           <div className="relative">
             <div className="flex py-1.5 px-4 justify-center items-center gap-2.5 rounded-lg border-px1 border-solid border-grey8 cursor-pointer">
-              <p className="text-darkergrey font-roboto text-sm font-light">
-                10
+              <p className="text-darkergrey font-roboto font-light">
+                {pageSizeNumber}
               </p>
               <div className="flex text-base">{arrowdownIcon}</div>
             </div>
 
-            <ul className="absolute z-10 w-full hidden flex-col gap-0.3 text-center mt-0.3 p-0.3 rounded-px5 bg-white shadow-custom2 border-px1 border-solid border-searchbarborder">
+            <ul className="absolute z-10 w-full flex flex-col gap-0.3 text-center mt-0.3 p-0.3 rounded-px5 bg-white shadow-custom2 border-px1 border-solid border-searchbarborder">
               <li className="cursor-pointer">
-                <p className="text-darkergrey font-roboto text-sm font-light hover:bg-primarycolour hover:text-white2 transition">
+                <p
+                  className="text-darkergrey font-roboto text-sm font-light hover:bg-primarycolour hover:text-white2 transition"
+                  onClick={handleChangePageSize}
+                >
                   10
                 </p>
               </li>
 
               <li className="cursor-pointer">
-                <p className="text-darkergrey font-roboto text-sm font-light hover:bg-primarycolour hover:text-white2 transition">
+                <p
+                  className="text-darkergrey font-roboto text-sm font-light hover:bg-primarycolour hover:text-white2 transition"
+                  onClick={handleChangePageSize}
+                >
                   15
                 </p>
               </li>
 
               <li className="cursor-pointer">
-                <p className="text-darkergrey font-roboto text-sm font-light hover:bg-primarycolour hover:text-white2 transition">
+                <p
+                  className="text-darkergrey font-roboto text-sm font-light hover:bg-primarycolour hover:text-white2 transition"
+                  onClick={handleChangePageSize}
+                >
                   20
                 </p>
               </li>
 
               <li className="cursor-pointer">
-                <p className="text-darkergrey font-roboto text-sm font-light hover:bg-primarycolour hover:text-white2 transition">
+                <p
+                  className="text-darkergrey font-roboto text-sm font-light hover:bg-primarycolour hover:text-white2 transition"
+                  onClick={handleChangePageSize}
+                >
                   25
                 </p>
               </li>
 
               <li className="cursor-pointer">
-                <p className="text-darkergrey font-roboto text-sm font-light hover:bg-primarycolour hover:text-white2 transition">
+                <p
+                  className="text-darkergrey font-roboto text-sm font-light hover:bg-primarycolour hover:text-white2 transition"
+                  onClick={handleChangePageSize}
+                >
                   30
                 </p>
               </li>

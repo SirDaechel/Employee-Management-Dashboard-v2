@@ -2,7 +2,6 @@ import StaffsPageUtilities from "../features/staffs/components/StaffsPageUtiliti
 import Tabs from "../components/ui/Tabs";
 import StaffsTableTools from "../features/staffs/components/StaffsTableTools";
 import StaffsTable from "../features/staffs/components/StaffsTable";
-import Pagination from "../components/ui/Pagination";
 import { useGetStaffsQuery } from "../features/staffs/data/staffsApiSlice";
 
 const Staffs: React.FC = () => {
@@ -18,7 +17,6 @@ const Staffs: React.FC = () => {
       <Tabs tabsData={staffsTabs} />
       <StaffsTableTools />
       <StaffsTable />
-      <Pagination />
     </>
   );
 };
