@@ -2,7 +2,7 @@ import StaffsTableTitle from "./StaffsTableTitle";
 import StaffsTableList from "./StaffsTableList";
 import Pagination from "../../../components/ui/Pagination";
 import { useGetStaffsQuery } from "../data/staffsApiSlice";
-import { usePag } from "../../../hooks/usePag";
+import { usePagination } from "../../../hooks/usePagination";
 import { useSelector } from "react-redux";
 import { selectStaffPageSize } from "../../../store/StaffsPerPageSlice";
 
@@ -19,7 +19,7 @@ const StaffsTable = () => {
     paginate,
     paginateToFirst,
     paginateToLast,
-  } = usePag(staffs, staffsPerPage);
+  } = usePagination(staffs, staffsPerPage);
 
   return (
     <>
