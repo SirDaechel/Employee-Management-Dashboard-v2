@@ -8,7 +8,6 @@ import PayrollTable from "../features/payroll/components/PayrollTable";
 import walletIcon from "../assets/icons/walletIcon";
 import timeIcon from "../assets/icons/timeIcon";
 import cashIcon2 from "../assets/icons/cashIcon2";
-// import Pagination from "../components/ui/Pagination";
 
 const Payroll = () => {
   return (
@@ -68,7 +67,6 @@ const Payroll = () => {
       </div>
       <SearchBar placeholder="Search Payroll" />
       <PayrollTable />
-      {/* <Pagination /> */}
     </div>
   );
 };

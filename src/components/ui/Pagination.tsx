@@ -4,18 +4,25 @@ import doublerightarrowIcon from "../../assets/icons/doublerightarrowIcon";
 type PaginationType = {
   pageNumbers: number[];
   currentPage: number;
-  paginate: any;
+  paginate: (type: number) => void;
+  paginateToFirst: () => void;
+  paginateToLast: () => void;
 };
 
 const Pagination: React.FC<PaginationType> = ({
   pageNumbers,
   currentPage,
   paginate,
+  paginateToFirst,
+  paginateToLast,
 }) => {
   return (
     <div className="flex items-center justify-center w-full relative my-6 h-12">
       <ul className="bg-white2 shadow-custom rounded-2xl flex py-0.2 px-2 justify-center items-center w-fit">
-        <div className="cursor-pointer flex items-center justify-center text-grey13 py-0.4 px-2 rounded-tl-2xl rounded-bl-2xl rounded-tr rounded-br mr-2 hover:bg-primarycolour hover:text-white hover:transition">
+        <div
+          className="cursor-pointer flex items-center justify-center text-grey13 py-0.4 px-2 rounded-tl-2xl rounded-bl-2xl rounded-tr rounded-br mr-2 hover:bg-primarycolour hover:text-white hover:transition"
+          onClick={paginateToFirst}
+        >
           {doubleleftarrowIcon}
         </div>
 
@@ -35,7 +42,10 @@ const Pagination: React.FC<PaginationType> = ({
           </li>
         ))}
 
-        <div className="cursor-pointer flex items-center justify-center text-grey13 py-0.4 px-2 rounded-tr-2xl rounded-br-2xl rounded-tl rounded-bl ml-2 hover:bg-primarycolour hover:text-white hover:transition">
+        <div
+          className="cursor-pointer flex items-center justify-center text-grey13 py-0.4 px-2 rounded-tr-2xl rounded-br-2xl rounded-tl rounded-bl ml-2 hover:bg-primarycolour hover:text-white hover:transition"
+          onClick={paginateToLast}
+        >
           {doublerightarrowIcon}
         </div>
       </ul>

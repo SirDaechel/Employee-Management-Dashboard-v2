@@ -12,10 +12,14 @@ const StaffsTable = () => {
   const pageSize = useSelector(selectStaffPageSize);
   const { staffsPerPage } = pageSize;
 
-  const { currentData, pageNumbers, currentPage, paginate } = usePag(
-    staffs,
-    staffsPerPage
-  );
+  const {
+    currentData,
+    pageNumbers,
+    currentPage,
+    paginate,
+    paginateToFirst,
+    paginateToLast,
+  } = usePag(staffs, staffsPerPage);
 
   return (
     <>
@@ -40,6 +44,8 @@ const StaffsTable = () => {
         pageNumbers={pageNumbers}
         currentPage={currentPage}
         paginate={paginate}
+        paginateToFirst={paginateToFirst}
+        paginateToLast={paginateToLast}
       />
     </>
   );
