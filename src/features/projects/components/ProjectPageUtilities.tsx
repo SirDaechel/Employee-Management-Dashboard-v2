@@ -1,12 +1,18 @@
 import Button from "../../../components/ui/Button";
 import SearchBar from "../../../components/ui/SearchBar";
 import plusIcon from "../../../assets/icons/plusIcon";
-// tahts
+import { useState } from "react";
 
 const ProjectPageUtilities: React.FC = () => {
+  const [query, setQuery] = useState<string>("");
+
   return (
     <div className="flex items-center justify-between m:gap-4">
-      <SearchBar placeholder="Search Projects" />
+      <SearchBar
+        query={query}
+        setQuery={setQuery}
+        placeholder="Search Projects"
+      />
       <Button
         icon={
           <span className="flex items-center justify-center w-px17 h-px17 text-xl">

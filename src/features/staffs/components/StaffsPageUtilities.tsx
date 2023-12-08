@@ -1,4 +1,4 @@
-import SearchBar from "../../../components/ui/SearchBar";
+import StaffsSearchBar from "./StaffsSearchBar";
 import Button from "../../../components/ui/Button";
 import exportIcon from "../../../assets/icons/exportIcon";
 import printIcon from "../../../assets/icons/printIcon";
@@ -19,7 +19,7 @@ const StaffsPageUtilities: React.FC = () => {
 
   return (
     <section className="flex items-center justify-between m:flex-col m:gap-4">
-      <SearchBar
+      <StaffsSearchBar
         placeholder="Search Staffs"
         query={query}
         setQuery={setQuery}
