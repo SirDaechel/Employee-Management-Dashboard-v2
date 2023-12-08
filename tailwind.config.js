@@ -93,6 +93,7 @@ export default {
         px17: "17px",
         px26: "26px",
         px150: "150px",
+        vh30: "30vh",
       },
       scale: {
         0.7: "0.7",
@@ -105,6 +106,7 @@ export default {
         brp125: "1.25rem",
         0.45: "0.45rem",
         0.625: "0.625rem",
+        0.7: "0.7rem",
         px3: "3px",
         px5: "5px",
         px10: "10px",

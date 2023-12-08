@@ -1,17 +1,16 @@
-import { useGetProjectsQuery } from "../data/projectsApiSlice";
+import { useSelector } from "react-redux";
+import { projectsState } from "../data/projectsApiSlice";
 
 const ProjectDeadline: React.FC = () => {
-  const {
-    data: projects,
-    isLoading,
-    isSuccess,
-    isError,
-  } = useGetProjectsQuery({});
+  const projectData = useSelector(projectsState);
+  const { projects } = projectData;
+
+  const deadlineProjects = projects.slice(0, 6);
 
   let content;
 
-  if (isSuccess) {
-    content = projects.map((project: any) => (
+  if (projects) {
+    content = deadlineProjects.map((project: any) => (
       <tr key={project.projectName}>
         <td className="text-sm font-roboto">{project.projectName}</td>
 
@@ -73,12 +72,6 @@ const ProjectDeadline: React.FC = () => {
 
         <tbody>{content}</tbody>
       </table>
-      {isLoading && <p className="bg-white p-4 text-center">Loading...</p>}
-      {isError && (
-        <p className="bg-white p-4 text-red-500 text-center">
-          Error while fetching data. Make sure you have internet connection!
-        </p>
-      )}
     </section>
   );
 };

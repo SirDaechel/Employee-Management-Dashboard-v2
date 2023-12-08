@@ -1,16 +1,19 @@
 import ProjectPageUtilities from "../features/projects/components/ProjectPageUtilities";
 import Tabs from "../components/ui/Tabs";
 import Project from "../features/projects/components/Project";
-import { useGetProjectsQuery } from "../features/projects/data/projectsApiSlice";
+import { projectsState } from "../features/projects/data/projectsApiSlice";
+import { useSelector } from "react-redux";
 
 const Projects: React.FC = () => {
-  const { data: projects, isSuccess } = useGetProjectsQuery({});
+  const projectData = useSelector(projectsState);
+  const { projects } = projectData;
+
   const projectsTabs = [
-    { id: "1", title: "All Projects", length: isSuccess && projects.length },
-    { id: "2", title: "Pending", length: isSuccess && projects.length },
-    { id: "3", title: "In Progress", length: isSuccess && projects.length },
-    { id: "4", title: "Testing", length: isSuccess && projects.length },
-    { id: "5", title: "Completed", length: isSuccess && projects.length },
+    { id: "1", title: "All Projects", length: projects.length },
+    { id: "2", title: "Pending", length: projects.length },
+    { id: "3", title: "In Progress", length: projects.length },
+    { id: "4", title: "Testing", length: projects.length },
+    { id: "5", title: "Completed", length: projects.length },
   ];
   return (
     <section>

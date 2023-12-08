@@ -1,16 +1,17 @@
 import StaffsTableTitle from "./StaffsTableTitle";
 import StaffsTableList from "./StaffsTableList";
 import Pagination from "../../../components/ui/Pagination";
-import { useGetStaffsQuery } from "../data/staffsApiSlice";
 import { usePagination } from "../../../hooks/usePagination";
 import { useSelector } from "react-redux";
 import { selectStaffPageSize } from "../../../store/StaffsPerPageSlice";
+import { staffsState } from "../data/staffsApiSlice";
 
 const StaffsTable = () => {
-  const { data: staffs, isSuccess, isLoading, isError } = useGetStaffsQuery({});
-
   const pageSize = useSelector(selectStaffPageSize);
   const { staffsPerPage } = pageSize;
+
+  const theStaffsData = useSelector(staffsState);
+  const { staffs } = theStaffsData;
 
   const {
     currentData,
@@ -21,23 +22,19 @@ const StaffsTable = () => {
     paginateToLast,
   } = usePagination(staffs, staffsPerPage);
 
+  const isSelectAllChecked = staffs.every((staff) => staff.checked);
+
   return (
     <>
       <section className="w-full overflow-x-auto relative">
         <table>
-          <StaffsTableTitle />
+          <StaffsTableTitle isSelectAllChecked={isSelectAllChecked} />
           {currentData.map((staff: any) => (
-            <StaffsTableList key={staff.id} {...staff} />
+            <StaffsTableList key={staff.id} staff={staff} />
           ))}
         </table>
-        {isSuccess && staffs.length < 1 && (
+        {staffs.length < 1 && (
           <p className="bg-white p-4 text-center">No data to display</p>
-        )}
-        {isLoading && <p className="bg-white p-4 text-center">Loading...</p>}
-        {isError && (
-          <p className="bg-white p-4 text-red-500 text-center">
-            Error while fetching data. Make sure you have internet connection!
-          </p>
         )}
       </section>
       <Pagination

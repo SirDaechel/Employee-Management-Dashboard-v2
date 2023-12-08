@@ -3,28 +3,19 @@ import editIcon from "../../../assets/icons/editIcon";
 import timeIcon from "../../../assets/icons/timeIcon";
 import trashIcon from "../../../assets/icons/trashIcon";
 import restoreIcon from "../../../assets/icons/restoreIcon";
+import { toggleChecked } from "../data/staffsApiSlice";
+import { useDispatch } from "react-redux";
 
 type TableListType = {
-  id: string;
-  name: string;
-  email: string;
-  role: string;
-  phone: string;
-  wage: number;
-  workinghours: number;
-  age: number;
+  staff: any;
 };
 
-const StaffsTableList: React.FC<TableListType> = ({
-  id,
-  name,
-  email,
-  role,
-  phone,
-  wage,
-  workinghours,
-  age,
-}) => {
+const StaffsTableList: React.FC<TableListType> = ({ staff }) => {
+  const { id, name, email, role, phone, wage, workinghours, age, checked } =
+    staff;
+
+  const dispatch = useDispatch();
+
   return (
     <tbody>
       <tr key={id}>
@@ -33,6 +24,10 @@ const StaffsTableList: React.FC<TableListType> = ({
             id={id}
             className="flex w-6 h-6 rounded-lg border-px1 border-solid border-searchbarborder bg-white2 text-left"
             type="checkbox"
+            checked={checked}
+            onChange={() =>
+              dispatch(toggleChecked({ id: id, checked: !checked }))
+            }
           />
         </td>
 

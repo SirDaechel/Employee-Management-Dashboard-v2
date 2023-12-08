@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
-export const usePagination = (data: [], pageSize: number) => {
+export const usePagination = (data: any[], pageSize: number) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [currentData, setCurrentData] = useState([]);
+  const [currentData, setCurrentData] = useState<any[]>([]);
   const [totalPages, setTotalPages] = useState(0);
 
   // Calculate the total number of pages based on the data length and pageSize
