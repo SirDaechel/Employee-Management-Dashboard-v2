@@ -3,7 +3,7 @@ import xIcon from "../../assets/icons/xIcon";
 
 type SearchType = {
   placeholder: string;
-  query?: string;
+  query: string;
   setQuery: React.Dispatch<React.SetStateAction<string>>;
 };
 

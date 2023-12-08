@@ -1,13 +1,19 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from "../../../store/Store";
+import { tickets } from "./tickets";
 
-export const helpdeskApiSlice = createApi({
-  reducerPath: "helpdesk",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3500" }),
-  endpoints: (builder) => ({
-    getHelpdesk: builder.query({
-      query: () => "/helpdesk",
-    }),
-  }),
+const initialState = {
+  tickets: tickets,
+};
+
+const helpdeskSlice = createSlice({
+  name: "helpdesk",
+  initialState,
+  reducers: {},
 });
 
-export const { useGetHelpdeskQuery } = helpdeskApiSlice;
+export const helpdeskState = (state: RootState) => state.helpdeskData;
+
+export const {} = helpdeskSlice.actions;
+
+export default helpdeskSlice.reducer;

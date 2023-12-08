@@ -8,8 +8,11 @@ import PayrollTable from "../features/payroll/components/PayrollTable";
 import walletIcon from "../assets/icons/walletIcon";
 import timeIcon from "../assets/icons/timeIcon";
 import cashIcon2 from "../assets/icons/cashIcon2";
+import { useState } from "react";
 
 const Payroll = () => {
+  const [query, setQuery] = useState<string>("");
+
   return (
     <div className="flex flex-col items-start justify-center gap-8">
       <div className="w-full flex items-center justify-between gap-4 m:flex-col">
@@ -65,7 +68,11 @@ const Payroll = () => {
         </div>
         <PayrollDate />
       </div>
-      <SearchBar placeholder="Search Payroll" />
+      <SearchBar
+        query={query}
+        setQuery={setQuery}
+        placeholder="Search Payroll"
+      />
       <PayrollTable />
     </div>
   );
