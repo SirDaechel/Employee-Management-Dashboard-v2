@@ -1,14 +1,17 @@
 import arrowdownIcon from "../../../assets/icons/arrowdownIcon";
 import arrowupIcon from "../../../assets/icons/arrowupIcon";
 import { useDispatch } from "react-redux";
-import { checkAll } from "../data/staffsApiSlice";
 
 type StaffsTableTitleType = {
+  staffs: any[];
   isSelectAllChecked: boolean;
+  checkAll: any;
 };
 
 const StaffsTableTitle: React.FC<StaffsTableTitleType> = ({
+  staffs,
   isSelectAllChecked,
+  checkAll,
 }) => {
   const dispatch = useDispatch();
   return (
@@ -18,7 +21,7 @@ const StaffsTableTitle: React.FC<StaffsTableTitleType> = ({
           <input
             className="flex w-6 h-6 rounded-lg border-px1 border-solid border-searchbarborder bg-white2 text-left"
             type="checkbox"
-            checked={isSelectAllChecked}
+            checked={!staffs.length ? false : isSelectAllChecked}
             onChange={(e) => dispatch(checkAll(e.target.checked))}
           />
         </th>

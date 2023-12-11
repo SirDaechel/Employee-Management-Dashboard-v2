@@ -6,15 +6,20 @@ import { useSelector } from "react-redux";
 import { selectStaffPageSize } from "../../../store/StaffsPerPageSlice";
 import { staffsState } from "../data/staffsApiSlice";
 
-const StaffsTable = () => {
+type StaffsTableType = {
+  staffs: any[];
+  checkAll: any;
+};
+
+const StaffsTable: React.FC<StaffsTableType> = ({ staffs, checkAll }) => {
   const pageSize = useSelector(selectStaffPageSize);
   const { staffsPerPage } = pageSize;
 
-  const theStaffsData = useSelector(staffsState);
-  const { staffs } = theStaffsData;
+  const theStaffState = useSelector(staffsState);
+  const { currentStaffs } = theStaffState;
 
   const {
-    currentData,
+    // currentData,
     pageNumbers,
     currentPage,
     paginate,
@@ -28,22 +33,30 @@ const StaffsTable = () => {
     <>
       <section className="w-full overflow-x-auto relative">
         <table>
-          <StaffsTableTitle isSelectAllChecked={isSelectAllChecked} />
-          {currentData.map((staff: any) => (
-            <StaffsTableList key={staff.id} staff={staff} />
-          ))}
+          <StaffsTableTitle
+            staffs={staffs}
+            isSelectAllChecked={isSelectAllChecked}
+            checkAll={checkAll}
+          />
+          <tbody>
+            {currentStaffs.map((staff: any) => (
+              <StaffsTableList key={staff.id} staff={staff} />
+            ))}
+          </tbody>
         </table>
         {staffs.length < 1 && (
           <p className="bg-white p-4 text-center">No data to display</p>
         )}
       </section>
-      <Pagination
-        pageNumbers={pageNumbers}
-        currentPage={currentPage}
-        paginate={paginate}
-        paginateToFirst={paginateToFirst}
-        paginateToLast={paginateToLast}
-      />
+      {staffs.length > 0 && (
+        <Pagination
+          pageNumbers={pageNumbers}
+          currentPage={currentPage}
+          paginate={paginate}
+          paginateToFirst={paginateToFirst}
+          paginateToLast={paginateToLast}
+        />
+      )}
     </>
   );
 };

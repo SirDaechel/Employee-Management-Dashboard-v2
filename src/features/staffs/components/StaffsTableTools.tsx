@@ -2,15 +2,29 @@ import flagIcon from "../../../assets/icons/flagIcon";
 import restoreIcon from "../../../assets/icons/restoreIcon";
 import timeIcon from "../../../assets/icons/timeIcon";
 import trashIcon from "../../../assets/icons/trashIcon";
-import mailIcon from "../../../assets/icons/mailIcon";
 import arrowdownIcon from "../../../assets/icons/arrowdownIcon";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { modifyPageSize } from "../../../store/StaffsPerPageSlice";
 import { selectStaffPageSize } from "../../../store/StaffsPerPageSlice";
 import { staffsState } from "../data/staffsApiSlice";
+import {
+  setArchivedStaffs,
+  setStaffs,
+  setDeletedStaffs,
+} from "../data/staffsApiSlice";
+import { changeStaffsState } from "../../../utils/changeStaffsState";
 
-const TableTools: React.FC = () => {
+type StaffsTableTools = {
+  theStaffs: any[];
+  activeTab: number;
+};
+
+const TableTools: React.FC<StaffsTableTools> = ({ theStaffs, activeTab }) => {
+  const theStaffState = useSelector(staffsState);
+  const { staffs, archivedStaffs, deletedStaffs, currentStaffs } =
+    theStaffState;
+
   const dispatch = useDispatch();
 
   const [showMenu, setShowMenu] = useState(false);
@@ -24,10 +38,6 @@ const TableTools: React.FC = () => {
   // save the current staffsPerPage value
   const pageSize = useSelector(selectStaffPageSize);
   const { staffsPerPage } = pageSize;
-
-  // get the staffs data or state
-  const staffsData = useSelector(staffsState);
-  const { staffs } = staffsData;
 
   const [pageSizeNumber, setPageSizeNumber] = useState<number>(10);
 
@@ -45,7 +55,7 @@ const TableTools: React.FC = () => {
 
   // check if the length of the staffs that are checked is more than one, open actions, if it isn't display a message
   const takeAction = () => {
-    const checkedStaffs = staffs.filter((staff) => staff.checked);
+    const checkedStaffs = theStaffs.filter((staff) => staff.checked);
     if (checkedStaffs.length > 1) {
       setShowActionsError(false);
       setShowActions(!showActions);
@@ -65,10 +75,91 @@ const TableTools: React.FC = () => {
     };
   });
 
+  // archived selected staffs
+  const archiveStaffs = () => {
+    if (activeTab === 0) {
+      changeStaffsState(
+        dispatch,
+        currentStaffs,
+        archivedStaffs,
+        staffs,
+        setArchivedStaffs,
+        setStaffs,
+        setShowActions
+      );
+    } else if (activeTab === 2) {
+      changeStaffsState(
+        dispatch,
+        currentStaffs,
+        archivedStaffs,
+        deletedStaffs,
+        setArchivedStaffs,
+        setDeletedStaffs,
+        setShowActions
+      );
+    }
+  };
+
+  // delete selected staffs
+  const deleteStaffs = () => {
+    if (activeTab === 0) {
+      changeStaffsState(
+        dispatch,
+        currentStaffs,
+        deletedStaffs,
+        staffs,
+        setDeletedStaffs,
+        setStaffs,
+        setShowActions
+      );
+    } else if (activeTab === 1) {
+      changeStaffsState(
+        dispatch,
+        currentStaffs,
+        deletedStaffs,
+        archivedStaffs,
+        setDeletedStaffs,
+        setArchivedStaffs,
+        setShowActions
+      );
+    }
+  };
+
+  // restore selected staffs
+  const restoreStaffs = () => {
+    if (activeTab === 1) {
+      changeStaffsState(
+        dispatch,
+        currentStaffs,
+        staffs,
+        archivedStaffs,
+        setStaffs,
+        setArchivedStaffs,
+        setShowActions
+      );
+    } else if (activeTab === 2) {
+      changeStaffsState(
+        dispatch,
+        currentStaffs,
+        staffs,
+        deletedStaffs,
+        setStaffs,
+        setDeletedStaffs,
+        setShowActions
+      );
+    }
+  };
+
   return (
     <div className="flex items-center justify-between w-full mb-0.62">
       <p className="text-grey6 font-openSans text-0.83 font-extralight m:hidden">
-        {`Showing ${staffsPerPage}-${staffs.length} result`}
+        {`Showing ${
+          theStaffs.length >= 10
+            ? staffsPerPage
+            : theStaffs.length < 10
+            ? theStaffs.length
+            : 0
+        }-${theStaffs.length} result`}
       </p>
 
       <div className="flex items-center justify-center gap-8 m:justify-between m:w-full">
@@ -96,24 +187,31 @@ const TableTools: React.FC = () => {
               style={{ display: showActions ? "block" : "none" }}
             >
               <ul className="flex flex-col gap-1 text-0.83 overflow-hidden">
-                <li className="py-1.5 px-0.3 flex items-center justify-start gap-2.5 cursor-pointer hover:bg-lightgrey2 hover:transition">
-                  <div className="text-sm scale-125">{restoreIcon}</div>
+                <li
+                  className="py-1.5 px-0.3 flex items-center justify-start gap-2.5 cursor-pointer hover:bg-lightgrey2 hover:transition"
+                  style={{ display: activeTab === 0 ? "none" : "flex" }}
+                  onClick={restoreStaffs}
+                >
+                  <span className="text-sm scale-125">{restoreIcon}</span>
                   <p>Restore all</p>
                 </li>
 
-                <li className="py-1.5 px-0.3 flex items-center justify-start gap-2.5 cursor-pointer hover:bg-lightgrey2 hover:transition">
-                  <div className="text-sm">{timeIcon}</div>
+                <li
+                  className="py-1.5 px-0.3 flex items-center justify-start gap-2.5 cursor-pointer hover:bg-lightgrey2 hover:transition"
+                  style={{ display: activeTab === 1 ? "none" : "flex" }}
+                  onClick={archiveStaffs}
+                >
+                  <span className="text-sm">{timeIcon}</span>
                   <p>Archive all</p>
                 </li>
 
-                <li className="py-1.5 px-0.3 flex items-center justify-start gap-2.5 cursor-pointer hover:bg-lightgrey2 hover:transition">
-                  <div className="text-sm">{trashIcon}</div>
+                <li
+                  className="py-1.5 px-0.3 flex items-center justify-start gap-2.5 cursor-pointer hover:bg-lightgrey2 hover:transition"
+                  style={{ display: activeTab === 2 ? "none" : "flex" }}
+                  onClick={deleteStaffs}
+                >
+                  <span className="text-sm">{trashIcon}</span>
                   <p>Delete all</p>
-                </li>
-
-                <li className="py-1.5 px-0.3 flex items-center justify-start gap-2.5 cursor-pointer hover:bg-lightgrey2 hover:transition">
-                  <div className="text-sm">{mailIcon}</div>
-                  <p>Send Mail</p>
                 </li>
               </ul>
             </div>

@@ -17,7 +17,7 @@ const StaffsTableList: React.FC<TableListType> = ({ staff }) => {
   const dispatch = useDispatch();
 
   return (
-    <tbody>
+    <>
       <tr key={id}>
         <td>
           <input
@@ -103,7 +103,7 @@ const StaffsTableList: React.FC<TableListType> = ({ staff }) => {
           </div>
         </td>
       </tr>
-    </tbody>
+    </>
   );
 };
 

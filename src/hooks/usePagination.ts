@@ -1,24 +1,23 @@
 import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setCurrentStaffs } from "../features/staffs/data/staffsApiSlice";
 
 export const usePagination = (data: any[], pageSize: number) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [currentData, setCurrentData] = useState<any[]>([]);
   const [totalPages, setTotalPages] = useState(0);
+
+  const dispatch = useDispatch();
 
   // Calculate the total number of pages based on the data length and pageSize
   useEffect(() => {
-    if (data && data.length > 0) {
-      setTotalPages(Math.ceil(data.length / pageSize));
-    }
+    setTotalPages(Math.ceil(data.length / pageSize));
   }, [data, pageSize]);
 
   // Slice the data array based on the currentPage and pageSize
   useEffect(() => {
-    if (data && data.length > 0) {
-      const endIndex = currentPage * pageSize;
-      const startIndex = endIndex - pageSize;
-      setCurrentData(data.slice(startIndex, endIndex));
-    }
+    const endIndex = currentPage * pageSize;
+    const startIndex = endIndex - pageSize;
+    dispatch(setCurrentStaffs(data.slice(startIndex, endIndex)));
   }, [data, currentPage, pageSize]);
 
   const pageNumbers = [];
@@ -49,7 +48,6 @@ export const usePagination = (data: any[], pageSize: number) => {
   };
 
   return {
-    currentData,
     currentPage,
     totalPages,
     paginate,

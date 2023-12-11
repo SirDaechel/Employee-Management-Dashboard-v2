@@ -2,24 +2,58 @@ import StaffsPageUtilities from "../features/staffs/components/StaffsPageUtiliti
 import Tabs from "../components/ui/Tabs";
 import StaffsTableTools from "../features/staffs/components/StaffsTableTools";
 import StaffsTable from "../features/staffs/components/StaffsTable";
-import { staffsState } from "../features/staffs/data/staffsApiSlice";
 import { useSelector } from "react-redux";
+import { useState } from "react";
+import {
+  staffsState,
+  checkAllStaffs,
+  checkAllArchivedStaffs,
+  checkAllDeletedStaffs,
+} from "../features/staffs/data/staffsApiSlice";
 
 const Staffs: React.FC = () => {
   const staffsData = useSelector(staffsState);
   const { staffs } = staffsData;
+  const { archivedStaffs } = staffsData;
+  const { deletedStaffs } = staffsData;
+  const [activeTab, setActiveTab] = useState<number>(0);
 
   const staffsTabs = [
     { id: "1", title: "All Staffs", length: staffs.length },
-    { id: "2", title: "Archived", length: staffs.length },
-    { id: "3", title: "Recycle Bin", length: staffs.length },
+    { id: "2", title: "Archived", length: archivedStaffs.length },
+    { id: "3", title: "Recycle Bin", length: deletedStaffs.length },
   ];
   return (
     <>
       <StaffsPageUtilities />
-      <Tabs tabsData={staffsTabs} />
-      <StaffsTableTools />
-      <StaffsTable />
+      <Tabs
+        tabsData={staffsTabs}
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+      />
+
+      {activeTab === 0 && (
+        <StaffsTableTools theStaffs={staffs} activeTab={activeTab} />
+      )}
+      {activeTab === 1 && (
+        <StaffsTableTools theStaffs={archivedStaffs} activeTab={activeTab} />
+      )}
+      {activeTab === 2 && (
+        <StaffsTableTools theStaffs={deletedStaffs} activeTab={activeTab} />
+      )}
+
+      {activeTab === 0 && (
+        <StaffsTable staffs={staffs} checkAll={checkAllStaffs} />
+      )}
+      {activeTab === 1 && (
+        <StaffsTable
+          staffs={archivedStaffs}
+          checkAll={checkAllArchivedStaffs}
+        />
+      )}
+      {activeTab === 2 && (
+        <StaffsTable staffs={deletedStaffs} checkAll={checkAllDeletedStaffs} />
+      )}
     </>
   );
 };

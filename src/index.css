@@ -32,3 +32,23 @@ th,
 td {
   padding: 0.6rem 1rem;
 }
+
+@media (max-width: 768px) {
+  .active-tab-txt {
+    color: #6c63ff;
+  }
+
+  .active-tab-no {
+    background: #6c63ff;
+  }
+}
+
+@media (min-width: 768px) {
+  .active-tab {
+    border-bottom: 3px solid #6c63ff;
+  }
+
+  .active-tab-no {
+    background: #6c63ff;
+  }
+}
