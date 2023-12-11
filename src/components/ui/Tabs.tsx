@@ -3,15 +3,15 @@ import { useState } from "react";
 
 type TabsType = {
   tabsData: any[];
-  activeTab: number;
-  setActiveTab: React.Dispatch<React.SetStateAction<number>>;
+  activeTab?: number;
+  setActiveTab?: React.Dispatch<React.SetStateAction<number>>;
 };
 
 const Tabs: React.FC<TabsType> = ({ tabsData, activeTab, setActiveTab }) => {
   const [openMobileTab, setOpenMobileTab] = useState<boolean>(false);
 
   const handleTabClick = (index: number) => {
-    setActiveTab(index);
+    setActiveTab && setActiveTab(index);
     setOpenMobileTab(false);
   };
 
@@ -33,7 +33,7 @@ const Tabs: React.FC<TabsType> = ({ tabsData, activeTab, setActiveTab }) => {
                 activeTab === index && "active-tab"
               }`}
               key={data.id}
-              onClick={() => setActiveTab(index)}
+              onClick={() => setActiveTab && setActiveTab(index)}
             >
               <p
                 className={`w-max text-sm ${
