@@ -7,6 +7,7 @@ import Payroll from "../views/Payroll";
 import HelpDesk from "../views/HelpDesk";
 import AddNewStaffs from "../views/AddNewStaffs";
 import AddProjects from "../views/AddProjects";
+import EditStaff from "../views/EditStaff";
 
 const AppRoutes = () => {
   return (
@@ -16,6 +17,7 @@ const AppRoutes = () => {
         <Route path="staffs">
           <Route index element={<Staffs />} />
           <Route path="addstaff" element={<AddNewStaffs />} />
+          <Route path="editstaff" element={<EditStaff />} />
         </Route>
         <Route path="projects">
           <Route index element={<Projects />} />

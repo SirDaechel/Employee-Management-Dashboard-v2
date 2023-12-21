@@ -2,15 +2,15 @@ import InputBox from "../components/ui/InputBox";
 import BtnDropdown from "../components/ui/BtnDropdown";
 import { useSelector, useDispatch } from "react-redux";
 import { staffsState } from "../features/staffs/data/staffsApiSlice";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import type { FieldValues } from "react-hook-form";
-import { setStaffs } from "../features/staffs/data/staffsApiSlice";
+import { editThisStaff } from "../features/staffs/data/staffsApiSlice";
 import { useNavigate } from "react-router-dom";
 
 const AddNewStaffs: React.FC = () => {
   const theStaffs = useSelector(staffsState);
-  const { staffs } = theStaffs;
+  const { staffs, staffToBeEdited } = theStaffs;
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -20,7 +20,21 @@ const AddNewStaffs: React.FC = () => {
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
+    setValue,
   } = useForm();
+
+  // if staff that is to be edited has content then set the input field or boxes to the staff data before modifying
+  staffToBeEdited.length >= 1 &&
+    useEffect(() => {
+      setValue("firstname", staffToBeEdited[0].firstname);
+      setValue("lastname", staffToBeEdited[0].lastname);
+      setValue("email", staffToBeEdited[0].email);
+      setStaffRole(staffToBeEdited[0].role);
+      setValue("wage", staffToBeEdited[0].wage);
+      setValue("age", staffToBeEdited[0].age);
+      setValue("phone", staffToBeEdited[0].phone);
+      setValue("workinghours", staffToBeEdited[0].workinghours);
+    }, []);
 
   const [staffRole, setStaffRole] = useState<string>("");
 
@@ -31,17 +45,15 @@ const AddNewStaffs: React.FC = () => {
     if (staffRole === "") {
       setRoleError("Select valid role");
     } else {
-      const newID = staffs.length ? staffs[0].id + 1 : 1;
-      const newStaff = {
-        ...data,
-        id: newID,
-        name: `${data.firstname} ${data.lastname}`,
-        role: staffRole,
-        checked: false,
-      };
-      dispatch(setStaffs([newStaff, ...staffs]));
+      dispatch(
+        editThisStaff({
+          ...data,
+          id: staffToBeEdited[0].id,
+          name: `${data.firstname} ${data.lastname}`,
+          role: staffRole,
+        })
+      );
       navigate("/staffs");
-      console.log(newStaff, staffs.length, staffs);
       setStaffRole("Select valid role");
       reset();
     }
@@ -49,7 +61,7 @@ const AddNewStaffs: React.FC = () => {
 
   return (
     <section>
-      <p className="font-poppins text-base font-normal">Add New Staff</p>
+      <p className="font-poppins text-base font-normal">Edit Staff</p>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="grid items-start justify-between gap-8 grid-cols-r21fr m:flex m:flex-col m:w-full"
@@ -195,7 +207,7 @@ const AddNewStaffs: React.FC = () => {
               isSubmitting && `bg-customgrey`
             }`}
           >
-            {isSubmitting ? "...submitting" : "Add Staff"}
+            {isSubmitting ? "...submitting" : "Edit Staff"}
           </button>
         </section>
       </form>

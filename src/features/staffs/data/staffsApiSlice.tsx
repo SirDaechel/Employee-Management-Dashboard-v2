@@ -7,13 +7,15 @@ type SliceType = {
   archivedStaffs: any[];
   currentStaffs: any[];
   deletedStaffs: any[];
+  staffToBeEdited: any;
 };
 
 const initialState: SliceType = {
-  staffs: staffs,
+  staffs: staffs.reverse(),
   archivedStaffs: [],
   currentStaffs: [],
   deletedStaffs: [],
+  staffToBeEdited: {},
 };
 
 const staffsSlice = createSlice({
@@ -68,6 +70,37 @@ const staffsSlice = createSlice({
     setStaffs: (state, action) => {
       return { ...state, staffs: action.payload };
     },
+    addEditStaff: (state, action) => {
+      return { ...state, staffToBeEdited: action.payload };
+    },
+    editThisStaff: (state, action) => {
+      const {
+        id,
+        name,
+        firstname,
+        lastname,
+        email,
+        role,
+        wage,
+        age,
+        phone,
+        workinghours,
+      } = action.payload;
+
+      // get the particular staff being edited
+      const staff = state.staffs.find((staff) => staff.id === id);
+
+      // set the staff to the edits
+      staff.name = name;
+      staff.firstname = firstname;
+      staff.lastname = lastname;
+      staff.email = email;
+      staff.role = role;
+      staff.wage = wage;
+      staff.age = age;
+      staff.phone = phone;
+      staff.workinghours = workinghours;
+    },
   },
 });
 
@@ -82,6 +115,8 @@ export const {
   setArchivedStaffs,
   setDeletedStaffs,
   setStaffs,
+  addEditStaff,
+  editThisStaff,
 } = staffsSlice.actions;
 
 export default staffsSlice.reducer;

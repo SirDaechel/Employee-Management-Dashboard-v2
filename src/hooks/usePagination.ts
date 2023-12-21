@@ -2,7 +2,11 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setCurrentStaffs } from "../features/staffs/data/staffsApiSlice";
 
-export const usePagination = (data: any[], pageSize: number) => {
+export const usePagination = (
+  data: any[],
+  currentStaffs: any[],
+  pageSize: number
+) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
 
@@ -20,7 +24,7 @@ export const usePagination = (data: any[], pageSize: number) => {
     dispatch(setCurrentStaffs(data.slice(startIndex, endIndex)));
   }, [data, currentPage, pageSize]);
 
-  const pageNumbers = [];
+  const pageNumbers: number[] = [];
 
   for (let i = 1; i <= totalPages; i++) {
     pageNumbers.push(i);
@@ -33,17 +37,25 @@ export const usePagination = (data: any[], pageSize: number) => {
     }
   };
 
-  //paginate to the first page
+  // paginate to the first page
   const paginateToFirst = () => {
     for (let i = 1; i <= Math.ceil(data.length / pageSize); i++) {
       setCurrentPage(1);
     }
   };
 
-  //paginate to the last page
+  // paginate to the last page
   const paginateToLast = () => {
     for (let i = 1; i <= Math.ceil(data.length / pageSize); i++) {
       setCurrentPage(i);
+    }
+  };
+
+  // if there is a single staff in the table and on the current page being viewed, and then that staff is deleted, also delete that page
+  const removePage = () => {
+    if (currentPage === pageNumbers.length && currentStaffs.length <= 1) {
+      pageNumbers.pop();
+      setCurrentPage(currentPage - 1);
     }
   };
 
@@ -54,5 +66,6 @@ export const usePagination = (data: any[], pageSize: number) => {
     pageNumbers,
     paginateToFirst,
     paginateToLast,
+    removePage,
   };
 };

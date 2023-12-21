@@ -43,16 +43,25 @@ const Staffs: React.FC = () => {
       )}
 
       {activeTab === 0 && (
-        <StaffsTable staffs={staffs} checkAll={checkAllStaffs} />
+        <StaffsTable
+          activeTab={activeTab}
+          staffs={staffs}
+          checkAll={checkAllStaffs}
+        />
       )}
       {activeTab === 1 && (
         <StaffsTable
+          activeTab={activeTab}
           staffs={archivedStaffs}
           checkAll={checkAllArchivedStaffs}
         />
       )}
       {activeTab === 2 && (
-        <StaffsTable staffs={deletedStaffs} checkAll={checkAllDeletedStaffs} />
+        <StaffsTable
+          activeTab={activeTab}
+          staffs={deletedStaffs}
+          checkAll={checkAllDeletedStaffs}
+        />
       )}
     </>
   );

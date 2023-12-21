@@ -53,7 +53,7 @@ const TableTools: React.FC<StaffsTableTools> = ({ theStaffs, activeTab }) => {
     dispatch(modifyPageSize(pageSizeNumber));
   }, [pageSizeNumber]);
 
-  // check if the length of the staffs that are checked is more than one, open actions, if it isn't display a message
+  // check if the length of the staffs that are checked is more than one, open actions, if it isn't, display a message
   const takeAction = () => {
     const checkedStaffs = theStaffs.filter((staff) => staff.checked);
     if (checkedStaffs.length > 1) {
@@ -64,7 +64,7 @@ const TableTools: React.FC<StaffsTableTools> = ({ theStaffs, activeTab }) => {
     }
   };
 
-  // set the take action error message to false after 3 seconds
+  // set the take action error message to false after 2 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowActionsError(false);
