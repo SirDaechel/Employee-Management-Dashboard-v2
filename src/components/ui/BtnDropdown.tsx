@@ -56,7 +56,7 @@ const BtnDropdown: React.FC<BtnDropdownType> = ({
 
       <section className="flex items-center h-full justify-between bg-white4 border-px1 border-solid border-grey11 rounded w-full font-medium overflow-hidden">
         <input
-          className="w-fit flex-grow font-openSans p-0.7 mt-0.3 text-xs text-grey13 bg-transparent focus:outline-none"
+          className="w-fit flex-grow font-openSans p-0.7 mt-0.3 text-xs text-darkgrey bg-transparent focus:outline-none"
           value={text}
           placeholder="Select role"
           readOnly
