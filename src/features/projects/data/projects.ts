@@ -1,8 +1,8 @@
 export const projects = [
   {
     id: 1,
-    projectcategory: "Web Development",
-    projectName: "CloudSprint",
+    category: "Web Development",
+    name: "CloudSprint",
     description: "Develop a cloud-based project management tool",
     startdate: "13th April 2023",
     enddate: "15th October 2023",
@@ -17,8 +17,8 @@ export const projects = [
 
   {
     id: 2,
-    projectcategory: "Internet of Things (IoT)",
-    projectName: "IoT Smart Home",
+    category: "Internet of Things (IoT)",
+    name: "IoT Smart Home",
     description: "Create an IoT solution for home automation",
     startdate: "13th March 2023",
     enddate: "19th October 2023",
@@ -33,8 +33,8 @@ export const projects = [
 
   {
     id: 3,
-    projectcategory: "Web Development",
-    projectName: "E-commerce Platform",
+    category: "Web Development",
+    name: "E-commerce Platform",
     description: "Build a scalable e-commerce platform",
     startdate: "3rd January 2023",
     enddate: "26th October 2023",
@@ -49,8 +49,8 @@ export const projects = [
 
   {
     id: 4,
-    projectcategory: "Artificial Intelligence (AI)",
-    projectName: "AI Chatbot",
+    category: "Artificial Intelligence (AI)",
+    name: "AI Chatbot",
     description: "Develop a conversational AI chatbot",
     startdate: "10th Febuary 2023",
     enddate: "1st November 2023",
@@ -65,8 +65,8 @@ export const projects = [
 
   {
     id: 5,
-    projectcategory: "App Development",
-    projectName: "Mobile Payment App",
+    category: "App Development",
+    name: "Mobile Payment App",
     description: "Create a secure mobile payment application",
     startdate: "18th July 2023",
     enddate: "10th November 2023",
@@ -81,8 +81,8 @@ export const projects = [
 
   {
     id: 6,
-    projectcategory: "Web Development",
-    projectName: "Data Analytics Dashboard",
+    category: "Web Development",
+    name: "Data Analytics Dashboard",
     description: "Build a data analytics dashboard for business insights",
     startdate: "26th August 2023",
     enddate: "21st November 2023",
@@ -97,8 +97,8 @@ export const projects = [
 
   {
     id: 7,
-    projectcategory: "Cyber Security",
-    projectName: "Cybersecurity Audit",
+    category: "Cyber Security",
+    name: "Cybersecurity Audit",
     description: "Conduct a comprehensive cybersecurity audit",
     startdate: "26th June 2023",
     enddate: "31st November 2023",
@@ -113,8 +113,8 @@ export const projects = [
 
   {
     id: 8,
-    projectcategory: "Web Development/Web3",
-    projectName: "Blockchain Integration",
+    category: "Web Development/Web3",
+    name: "Blockchain Integration",
     description: "Integrate blockchain technology into existing systems",
     startdate: "20th June 2023",
     enddate: "2nd December 2023",
@@ -129,8 +129,8 @@ export const projects = [
 
   {
     id: 9,
-    projectcategory: "App Development",
-    projectName: "Healthcare App",
+    category: "App Development",
+    name: "Healthcare App",
     description: "Develop a healthcare app for patients and doctors",
     startdate: "20th August 2023",
     enddate: "7th December 2023",
@@ -145,8 +145,8 @@ export const projects = [
 
   {
     id: 10,
-    projectcategory: "Artificial Intelligence (AI)",
-    projectName: "AI-driven Marketing Campaign",
+    category: "Artificial Intelligence (AI)",
+    name: "AI-driven Marketing Campaign",
     description: "Create an AI-driven marketing campaign platform",
     startdate: "20th May 2023",
     enddate: "16th December 2023",
@@ -161,8 +161,8 @@ export const projects = [
 
   {
     id: 11,
-    projectcategory: "Web Development/Saas",
-    projectName: "Video Streaming Service",
+    category: "Web Development/Saas",
+    name: "Video Streaming Service",
     description: "Develop a video streaming service",
     startdate: "20th March 2023",
     enddate: "24th December 2023",
@@ -177,8 +177,8 @@ export const projects = [
 
   {
     id: 12,
-    projectcategory: "Internet of Things (IoT)",
-    projectName: "Smart Transportation System",
+    category: "Internet of Things (IoT)",
+    name: "Smart Transportation System",
     description: "Build a smart transportation system for cities",
     startdate: "14th October 2023",
     enddate: "3rd Febuary 2024",
@@ -193,8 +193,8 @@ export const projects = [
 
   {
     id: 13,
-    projectcategory: "Web Development",
-    projectName: "EduTech Platform",
+    category: "Web Development",
+    name: "EduTech Platform",
     description: "Create an online education platform",
     startdate: "30th October 2023",
     enddate: "21th March 2024",
@@ -209,8 +209,8 @@ export const projects = [
 
   {
     id: 14,
-    projectcategory: "Artificial Intelligence (AI)",
-    projectName: "Augmented Reality Game",
+    category: "Artificial Intelligence (AI)",
+    name: "Augmented Reality Game",
     description: "Develop an AR game for mobile devices",
     startdate: "9th November 2023",
     enddate: "10th April 2024",
@@ -225,8 +225,8 @@ export const projects = [
 
   {
     id: 15,
-    projectcategory: "Artificial Intelligence (AI)",
-    projectName: "AI-powered Customer Support",
+    category: "Artificial Intelligence (AI)",
+    name: "AI-powered Customer Support",
     description: "Implement AI in customer support operations",
     startdate: "29th November 2023",
     enddate: "18th April 2024",
@@ -241,8 +241,8 @@ export const projects = [
 
   {
     id: 16,
-    projectcategory: "Internet of Things (IoT)",
-    projectName: "Autonomous Drone System",
+    category: "Internet of Things (IoT)",
+    name: "Autonomous Drone System",
     description: "Develop an autonomous drone system for surveillance",
     startdate: "3rd December 2023",
     enddate: "22nd May 2024",
@@ -257,8 +257,8 @@ export const projects = [
 
   {
     id: 17,
-    projectcategory: "Web Development",
-    projectName: "Social Media Analytics",
+    category: "Web Development",
+    name: "Social Media Analytics",
     description: "Build a social media analytics tool",
     startdate: "2nd January 2024",
     enddate: "7th May 2024",
@@ -273,8 +273,8 @@ export const projects = [
 
   {
     id: 18,
-    projectcategory: "Web Development",
-    projectName: "Fintech API Integration",
+    category: "Web Development",
+    name: "Fintech API Integration",
     description: "Integrate fintech APIs for payment processing",
     startdate: "22nd January 2024",
     enddate: "17th May 2024",
@@ -289,8 +289,8 @@ export const projects = [
 
   {
     id: 19,
-    projectcategory: "Artificial Intelligence (AI)",
-    projectName: "AI-driven Agriculture",
+    category: "Artificial Intelligence (AI)",
+    name: "AI-driven Agriculture",
     description: "Implement AI in agriculture for crop optimization",
     startdate: "4th Febuary 2024",
     enddate: "20th May 2024",
@@ -305,8 +305,8 @@ export const projects = [
 
   {
     id: 20,
-    projectcategory: "Cyber Security",
-    projectName: "Cybersecurity Training Platform",
+    category: "Cyber Security",
+    name: "Cybersecurity Training Platform",
     description: "Develop a platform for cybersecurity training",
     startdate: "17th Febuary 2024",
     enddate: "25th May 2024",
@@ -321,8 +321,8 @@ export const projects = [
 
   {
     id: 21,
-    projectcategory: "UI/UX",
-    projectName: "Sudoku - Web redesign",
+    category: "UI/UX",
+    name: "Sudoku - Web redesign",
     description: "Redesign the sudoku website to a modern look",
     startdate: "15th March 2024",
     enddate: "27th May 2024",

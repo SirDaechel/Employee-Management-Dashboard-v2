@@ -51,7 +51,7 @@ const StaffsTableList: React.FC<TableListType> = ({
   const toggleStaffOptions = (id: any) => {
     if (staffID === id) {
       // If the clicked staff is the same as the stored staffID, toggle the showOptions state
-      setShowStaffsOptions(!showStaffOptions);
+      setShowStaffsOptions((prev) => !prev);
     } else {
       // If a different staff is clicked, update the staffID and show options
       setStaffID(id);

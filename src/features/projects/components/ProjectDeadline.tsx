@@ -11,8 +11,8 @@ const ProjectDeadline: React.FC = () => {
 
   if (projects) {
     content = deadlineProjects.map((project: any) => (
-      <tr key={project.projectName}>
-        <td className="text-sm font-roboto">{project.projectName}</td>
+      <tr key={project.id}>
+        <td className="text-sm font-roboto">{project.name}</td>
 
         <td className="text-sm font-roboto">{project.assignedTo}</td>
 

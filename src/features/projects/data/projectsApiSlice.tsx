@@ -2,18 +2,26 @@ import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../../store/Store";
 import { projects } from "./projects";
 
-const initialState = {
+type SliceType = {
+  projects: any[];
+};
+
+const initialState: SliceType = {
   projects: projects,
 };
 
 const projectSlice = createSlice({
   name: "projects",
   initialState,
-  reducers: {},
+  reducers: {
+    setProjects: (state, action) => {
+      return { ...state, projects: action.payload };
+    },
+  },
 });
 
 export const projectsState = (state: RootState) => state.projectsData;
 
-export const {} = projectSlice.actions;
+export const { setProjects } = projectSlice.actions;
 
 export default projectSlice.reducer;

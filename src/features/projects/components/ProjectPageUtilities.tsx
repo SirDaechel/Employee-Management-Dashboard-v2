@@ -1,11 +1,13 @@
 import Button from "../../../components/ui/Button";
 import SearchBar from "../../../components/ui/SearchBar";
 import plusIcon from "../../../assets/icons/plusIcon";
-import { useState } from "react";
 
-const ProjectPageUtilities: React.FC = () => {
-  const [query, setQuery] = useState<string>("");
+type UtilitiesType = {
+  query: string;
+  setQuery: React.Dispatch<React.SetStateAction<string>>;
+};
 
+const ProjectPageUtilities: React.FC<UtilitiesType> = ({ query, setQuery }) => {
   return (
     <div className="flex items-center justify-between m:gap-4">
       <SearchBar
