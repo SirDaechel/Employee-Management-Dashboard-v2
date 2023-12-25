@@ -1,1 +1,1 @@
-This is a refined version my my previous employee management dashboard.
+This is a refined version my previous employee management dashboard.
