@@ -3,7 +3,7 @@ type InputType = {
   label: string;
   htmlFor: string;
   inputType: string;
-  placeholder: string;
+  placeholder?: string;
   error: any;
 };
 

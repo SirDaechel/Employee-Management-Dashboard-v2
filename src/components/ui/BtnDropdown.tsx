@@ -8,7 +8,7 @@ type BtnDropdownType = {
   setText: React.Dispatch<React.SetStateAction<string>>;
   error: string;
   setError: React.Dispatch<React.SetStateAction<string>>;
-  placeholder: string;
+  placeholder?: string;
   property?: string;
 };
 
