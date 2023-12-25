@@ -25,7 +25,7 @@ const DateInput: React.FC<DateInputType> = ({
         onClick={() => openCalendar()}
       >
         <input
-          className="text-grey13 text-sm font-normal focus:outline-none bg-transparent cursor-pointer"
+          className="w-max text-grey13 text-sm font-normal focus:outline-none bg-transparent cursor-pointer"
           value={projectDate}
           readOnly
           placeholder={placeholder}
