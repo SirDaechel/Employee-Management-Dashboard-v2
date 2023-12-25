@@ -66,6 +66,7 @@ const AddNewStaffs: React.FC = () => {
             label="First Name:"
             htmlFor="firstname"
             inputType={"text"}
+            placeholder="Firstname"
             error={
               errors.firstname && (
                 <p className="text-red-500">{`${errors.firstname.message}`}</p>
@@ -84,6 +85,7 @@ const AddNewStaffs: React.FC = () => {
             label="Last Name:"
             htmlFor="lastname"
             inputType={"text"}
+            placeholder="Lastname"
             error={
               errors.lastname && (
                 <p className="text-red-500">{`${errors.lastname.message}`}</p>
@@ -98,6 +100,7 @@ const AddNewStaffs: React.FC = () => {
             label="Email:"
             htmlFor="email"
             inputType={"email"}
+            placeholder="Email"
             error={
               errors.email && (
                 <p className="text-red-500">{`${errors.email.message}`}</p>
@@ -112,6 +115,8 @@ const AddNewStaffs: React.FC = () => {
             data={staffs}
             error={roleError}
             setError={setRoleError}
+            placeholder="Select role"
+            property="role"
           />
 
           <InputBox
@@ -125,6 +130,7 @@ const AddNewStaffs: React.FC = () => {
             label="Wage:"
             htmlFor="wage"
             inputType="number"
+            placeholder="Wage"
             error={
               errors.wage && (
                 <p className="text-red-500">{`${errors.wage.message}`}</p>
@@ -143,6 +149,7 @@ const AddNewStaffs: React.FC = () => {
             label="Age:"
             htmlFor="age"
             inputType="number"
+            placeholder="Age"
             error={
               errors.age && (
                 <p className="text-red-500">{`${errors.age.message}`}</p>
@@ -163,6 +170,7 @@ const AddNewStaffs: React.FC = () => {
             label="Phone:"
             htmlFor="phone"
             inputType={"tel"}
+            placeholder="Phone"
             error={
               errors.phone && (
                 <p className="text-red-500">{`${errors.phone.message}`}</p>
@@ -181,6 +189,7 @@ const AddNewStaffs: React.FC = () => {
             label="Working Hours:"
             htmlFor="hours"
             inputType="number"
+            placeholder="Hours"
             error={
               errors.hours && (
                 <p className="text-red-500">{`${errors.hours.message}`}</p>

@@ -7,7 +7,7 @@ type SliceType = {
 };
 
 const initialState: SliceType = {
-  projects: projects,
+  projects: projects.reverse(),
 };
 
 const projectSlice = createSlice({

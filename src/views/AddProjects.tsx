@@ -1,19 +1,30 @@
 import InputBox from "../components/ui/InputBox";
 import BtnDropdown from "../components/ui/BtnDropdown";
 import { useSelector, useDispatch } from "react-redux";
-import { staffsState } from "../features/staffs/data/staffsApiSlice";
+import { projectsState } from "../features/projects/data/projectsApiSlice";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import type { FieldValues } from "react-hook-form";
-import { setStaffs } from "../features/staffs/data/staffsApiSlice";
+import { setProjects } from "../features/projects/data/projectsApiSlice";
 import { useNavigate } from "react-router-dom";
+import TextArea from "../components/ui/TextArea";
+import AssignInput from "../components/ui/AssignInput";
+import { staffsState } from "../features/staffs/data/staffsApiSlice";
+import DateInput from "../components/ui/DateInput";
+import Calendar from "../components/ui/Calendar";
+import TagsInput from "../components/ui/TagsInput";
 
-const AddNewStaffs: React.FC = () => {
+const AddProjects: React.FC = () => {
+  const theprojects = useSelector(projectsState);
+  const { projects } = theprojects;
+
   const theStaffs = useSelector(staffsState);
   const { staffs } = theStaffs;
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const [projectTeam, setProjectTeam] = useState<any[]>([]);
 
   const {
     register,
@@ -22,170 +33,242 @@ const AddNewStaffs: React.FC = () => {
     reset,
   } = useForm();
 
-  const [staffRole, setStaffRole] = useState<string>("");
+  const [projectCategory, setProjectCategory] = useState<string>("");
 
-  const [roleError, setRoleError] = useState<string>("");
+  const [categoryError, setCategoryError] = useState<string>("");
+  const [priorityError, setPriorityError] = useState<string>("");
+  const [startDateError, setStartDateError] = useState<string>("");
+  const [endDateError, setEndDateError] = useState<string>("");
+  const [stacksError, setStacksError] = useState<string>("");
+  const [teamError, setTeamError] = useState<string>("");
+
+  const [projectStartDate, setProjectStartDate] = useState<string>("");
+
+  const [projectEndDate, setProjectEndDate] = useState<string>("");
+
+  const [projectPriority, setProjectPriority] = useState("");
+
+  const [projectStacks, setProjectStacks] = useState<any[]>([]);
+
+  const [showStartDateCalendar, setShowStartDateCalendar] =
+    useState<boolean>(false);
+  const [showEndDateCalendar, setShowEndDateCalendar] =
+    useState<boolean>(false);
+
+  const projectPriorityList: object[] = [
+    { id: 1, label: "High" },
+    { id: 2, label: "Medium" },
+    { id: 3, label: "Low" },
+  ];
+
+  // Open Start Date Calendar
+  const openStartDateCalendar = () => {
+    setShowEndDateCalendar(false);
+    setShowStartDateCalendar((prev) => !prev);
+  };
+
+  // Open End Date Calendar
+  const openEndDateCalendar = () => {
+    setShowStartDateCalendar(false);
+    setShowEndDateCalendar((prev) => !prev);
+  };
 
   const onSubmit = (data: FieldValues) => {
-    // is staff role is empty, show error message, if not, submit the data
-    if (staffRole === "") {
-      setRoleError("Select valid role");
-    } else {
-      const newID = staffs.length ? staffs[0].id + 1 : 1;
-      const newStaff = {
+    // if the below conditions are true, show error message, if not, submit the data
+    if (projectCategory === "") {
+      setCategoryError("Select category");
+    }
+
+    if (projectTeam.length === 0) {
+      setTeamError("Assign project to team");
+    }
+
+    if (projectStartDate === "") {
+      setStartDateError("Select start date");
+    }
+
+    if (projectEndDate === "") {
+      setEndDateError("Select end date");
+    }
+
+    if (projectPriority === "") {
+      setPriorityError("Select priority");
+    }
+
+    if (projectStacks.length === 0) {
+      setStacksError("Select project stacks");
+    }
+
+    if (
+      projectCategory &&
+      projectStartDate &&
+      projectEndDate &&
+      projectPriority &&
+      projectStacks.length &&
+      projectTeam.length
+    ) {
+      const newID = projects.length ? projects[0].id + 1 : 1;
+
+      const newProject = {
         ...data,
         id: newID,
-        name: `${data.firstname} ${data.lastname}`,
-        role: staffRole,
-        checked: false,
+        category: projectCategory,
+        assignedTo: projectTeam,
+        startdate: projectStartDate,
+        enddate: projectEndDate,
+        priority: projectPriority,
+        technologyStack: projectStacks,
+        status: "In Progress",
       };
-      dispatch(setStaffs([newStaff, ...staffs]));
-      navigate("/staffs");
-      console.log(newStaff, staffs.length, staffs);
-      setStaffRole("Select valid role");
+      setProjectCategory("");
+      setProjectTeam([]);
+      setProjectStartDate("");
+      setProjectEndDate("");
+      setProjectPriority("");
+      setProjectStacks([]);
+      dispatch(setProjects([newProject, ...projects]));
+      navigate("/projects");
       reset();
     }
   };
 
   return (
     <section>
-      <p className="font-poppins text-base font-normal">Add New Staff</p>
+      <p className="font-poppins text-base font-normal">Project Details</p>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="grid items-start justify-between gap-8 grid-cols-r21fr m:flex m:flex-col m:w-full"
+        className="grid items-start justify-between gap-8 grid-cols-r21fr m:flex m:flex-col"
       >
-        <section className="flex flex-col gap-8 mt-6 m:w-full">
+        <section className="flex flex-col gap-8 mt-6 w-full relative">
           <InputBox
-            inputRegister={register("firstname", {
-              required: "Firstname is required",
+            inputRegister={register("name", {
+              required: "Project name is required",
               minLength: {
                 value: 3,
                 message: "Use 3 characters or more",
               },
             })}
-            label="First Name:"
-            htmlFor="firstname"
+            label="Project Name:"
+            htmlFor="name"
             inputType={"text"}
+            placeholder="Enter project description"
             error={
-              errors.firstname && (
-                <p className="text-red-500">{`${errors.firstname.message}`}</p>
+              errors.name && (
+                <p className="text-red-500">{`${errors.name.message}`}</p>
               )
             }
           />
 
-          <InputBox
-            inputRegister={register("lastname", {
-              required: "Lastname is required",
+          <TextArea
+            inputRegister={register("description", {
+              required: "Project description is required",
               minLength: {
-                value: 3,
-                message: "Use 3 characters or more",
+                value: 5,
+                message: "Use 5 characters or more",
               },
             })}
-            label="Last Name:"
-            htmlFor="lastname"
-            inputType={"text"}
+            label="Project Description:"
+            placeholder="Enter Project Description"
+            htmlFor="description"
             error={
-              errors.lastname && (
-                <p className="text-red-500">{`${errors.lastname.message}`}</p>
-              )
-            }
-          />
-
-          <InputBox
-            inputRegister={register("email", {
-              required: "Email is required",
-            })}
-            label="Email:"
-            htmlFor="email"
-            inputType={"email"}
-            error={
-              errors.email && (
-                <p className="text-red-500">{`${errors.email.message}`}</p>
+              errors.description && (
+                <p className="text-red-500">{`${errors.description.message}`}</p>
               )
             }
           />
 
           <BtnDropdown
-            label={"Assign Role:"}
-            text={staffRole}
-            setText={setStaffRole}
+            label={"Project Category:"}
+            text={projectCategory}
+            setText={setProjectCategory}
+            data={projects}
+            error={categoryError}
+            setError={setCategoryError}
+            placeholder="Select category"
+            property="category"
+          />
+
+          <AssignInput
             data={staffs}
-            error={roleError}
-            setError={setRoleError}
+            projectTeam={projectTeam}
+            setProjectTeam={setProjectTeam}
+            error={teamError}
+            setError={setTeamError}
           />
 
-          <InputBox
-            inputRegister={register("wage", {
-              required: "Wage is required",
-              minLength: {
-                value: 3,
-                message: "Must be a minimum of three characters",
-              },
-            })}
-            label="Wage:"
-            htmlFor="wage"
-            inputType="number"
-            error={
-              errors.wage && (
-                <p className="text-red-500">{`${errors.wage.message}`}</p>
-              )
-            }
+          <DateInput
+            label="Start Date:"
+            projectDate={projectStartDate}
+            openCalendar={openStartDateCalendar}
+            error={startDateError}
+            placeholder="Enter start date"
           />
 
-          <InputBox
-            inputRegister={register("age", {
-              required: "Age is required",
-              maxLength: {
-                value: 2,
-                message: "Must be two characters",
-              },
-            })}
-            label="Age:"
-            htmlFor="age"
-            inputType="number"
-            error={
-              errors.age && (
-                <p className="text-red-500">{`${errors.age.message}`}</p>
-              )
-            }
+          <DateInput
+            label="End Date:"
+            projectDate={projectEndDate}
+            openCalendar={openEndDateCalendar}
+            error={endDateError}
+            placeholder="Enter end date"
           />
+          {showStartDateCalendar && (
+            <Calendar
+              title="Select Start Date"
+              setProjectDate={setProjectStartDate}
+              showCalendar={showStartDateCalendar}
+              setShowCalendar={setShowStartDateCalendar}
+              setError={setStartDateError}
+            />
+          )}
+
+          {showEndDateCalendar && (
+            <Calendar
+              title="Select End Date"
+              setProjectDate={setProjectEndDate}
+              showCalendar={showEndDateCalendar}
+              setShowCalendar={setShowEndDateCalendar}
+              setError={setEndDateError}
+            />
+          )}
         </section>
 
         <section className="flex flex-col gap-8 mt-6 m:w-full m:mt-0">
+          <BtnDropdown
+            label={"Project Priority:"}
+            text={projectPriority}
+            setText={setProjectPriority}
+            data={projectPriorityList}
+            error={priorityError}
+            setError={setPriorityError}
+            placeholder="Select project priority"
+            property="label"
+          />
+
           <InputBox
-            inputRegister={register("phone", {
-              required: "Phone is required",
-              maxLength: {
-                value: 16,
-                message: "Invalid phone number",
+            inputRegister={register("client", {
+              required: "Project client is required",
+              minLength: {
+                value: 3,
+                message: "Use 3 characters or more",
               },
             })}
-            label="Phone:"
-            htmlFor="phone"
-            inputType={"tel"}
+            label="Project Client:"
+            htmlFor="client"
+            inputType={"text"}
+            placeholder="Enter project client"
             error={
-              errors.phone && (
-                <p className="text-red-500">{`${errors.phone.message}`}</p>
+              errors.client && (
+                <p className="text-red-500">{`${errors.client.message}`}</p>
               )
             }
           />
 
-          <InputBox
-            inputRegister={register("workinghours", {
-              required: "Hours is required",
-              maxLength: {
-                value: 2,
-                message: "Must be two characters",
-              },
-            })}
-            label="Working Hours:"
-            htmlFor="hours"
-            inputType="number"
-            error={
-              errors.hours && (
-                <p className="text-red-500">{`${errors.hours.message}`}</p>
-              )
-            }
+          <TagsInput
+            label="Project Stack:"
+            data={projectStacks}
+            setData={setProjectStacks}
+            error={stacksError}
+            setError={setStacksError}
           />
 
           <button
@@ -195,7 +278,7 @@ const AddNewStaffs: React.FC = () => {
               isSubmitting && `bg-customgrey`
             }`}
           >
-            {isSubmitting ? "...submitting" : "Add Staff"}
+            {isSubmitting ? "...submitting" : "Add Project"}
           </button>
         </section>
       </form>
@@ -203,4 +286,4 @@ const AddNewStaffs: React.FC = () => {
   );
 };
 
-export default AddNewStaffs;
+export default AddProjects;
