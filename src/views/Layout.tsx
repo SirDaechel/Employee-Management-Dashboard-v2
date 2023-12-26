@@ -21,7 +21,7 @@ const Layout: React.FC = () => {
             setOverlay={setOverlay}
           />
         )}
-        <section className="w-p87 pr-8 pl-4 pb-8 m:w-full m:p-0.6 m:mb-24 xl:w-p77 xl:pl-4 xxl:w-p77 ultra:px-96">
+        <section className="w-p87 pr-4 pl-3 pb-8 m:w-full m:p-0.6 m:mb-24 xl:w-p77 xl:pl-4 xxl:w-p77 ultra:px-96">
           <TopNav
             setShowNotifications={setShowNotifications}
             setOverlay={setOverlay}
