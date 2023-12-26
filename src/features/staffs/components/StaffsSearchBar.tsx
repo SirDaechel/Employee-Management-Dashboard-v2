@@ -1,11 +1,12 @@
 import searchIcon from "../../../assets/icons/searchIcon";
 import xIcon from "../../../assets/icons/xIcon";
+import { StaffType } from "../../../models/types";
 
 type SearchType = {
   placeholder: string;
   query?: string;
   setQuery: React.Dispatch<React.SetStateAction<string>>;
-  filteredStaffsSearch?: any[];
+  filteredStaffsSearch?: StaffType[];
 };
 
 const SearchBar: React.FC<SearchType> = ({
@@ -54,7 +55,7 @@ const SearchBar: React.FC<SearchType> = ({
               <p>No results found</p>
             ) : (
               <ul>
-                {filteredStaffsSearch?.map((staff: any) => (
+                {filteredStaffsSearch?.map((staff: StaffType) => (
                   <li
                     key={staff.id}
                     className="cursor-pointer p-0.7 text-sm hover:bg-grey9"

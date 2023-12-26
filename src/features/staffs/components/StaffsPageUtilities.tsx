@@ -4,6 +4,7 @@ import addUserIcon from "../../../assets/icons/addUserIcon";
 import { useState } from "react";
 import { staffsState } from "../data/staffsApiSlice";
 import { useSelector } from "react-redux";
+import { StaffType } from "../../../models/types";
 
 const StaffsPageUtilities: React.FC = () => {
   const staffsData = useSelector(staffsState);
@@ -11,7 +12,7 @@ const StaffsPageUtilities: React.FC = () => {
 
   const [query, setQuery] = useState<string>("");
 
-  const filteredStaffsSearch: any[] = staffs.filter((staff: any) =>
+  const filteredStaffsSearch: StaffType[] = staffs.filter((staff: StaffType) =>
     staff.name.toLowerCase().includes(query.toLowerCase())
   );
 

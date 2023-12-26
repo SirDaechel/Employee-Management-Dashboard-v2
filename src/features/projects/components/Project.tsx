@@ -6,15 +6,16 @@ import avatar3 from "../../../assets/images/avatar (3).webp";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setProjects } from "../data/projectsApiSlice";
+import { ProjectType } from "../../../models/types";
 
-type ProjectType = {
-  initialProjects: any[];
-  filteredProjects: any[];
-  projectID: any;
-  setProjectID: React.Dispatch<React.SetStateAction<undefined>>;
+type ProjectsType = {
+  initialProjects: ProjectType[];
+  filteredProjects: ProjectType[];
+  projectID: number;
+  setProjectID: React.Dispatch<React.SetStateAction<number>>;
 };
 
-const Project: React.FC<ProjectType> = ({
+const Project: React.FC<ProjectsType> = ({
   initialProjects,
   filteredProjects,
   projectID,
@@ -24,7 +25,7 @@ const Project: React.FC<ProjectType> = ({
 
   const dispatch = useDispatch();
 
-  const toggleDeleteProject = (id: any) => {
+  const toggleDeleteProject = (id: number) => {
     if (projectID === id) {
       // If the clicked project is the same as the stored projectID, toggle the showDeleteProject state
       setShowDeleteProject((prev) => !prev);
@@ -35,9 +36,11 @@ const Project: React.FC<ProjectType> = ({
     }
   };
 
-  const deleteProject = (id: any) => {
+  const deleteProject = (id: number) => {
     dispatch(
-      setProjects(initialProjects.filter((project) => project.id !== id))
+      setProjects(
+        initialProjects.filter((project: ProjectType) => project.id !== id)
+      )
     );
   };
 

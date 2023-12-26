@@ -60,7 +60,7 @@ const Projects: React.FC = () => {
     { id: "3", title: "Completed", length: completedProjects.length },
   ];
 
-  const [projectID, setProjectID] = useState();
+  const [projectID, setProjectID] = useState<number>(0);
 
   return (
     <section>

@@ -1,8 +1,14 @@
 import filterIcon from "../../assets/icons/filterIcon";
 import { useState } from "react";
 
+type StaffsTabsType = {
+  id: string;
+  title: string;
+  length: number;
+};
+
 type TabsType = {
-  tabsData: any[];
+  tabsData: StaffsTabsType[];
   activeTab?: number;
   setActiveTab?: React.Dispatch<React.SetStateAction<number>>;
 };

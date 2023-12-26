@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { projectsState } from "../data/projectsApiSlice";
+import { ProjectType } from "../../../models/types";
 
 const ProjectDeadline: React.FC = () => {
   const projectData = useSelector(projectsState);
@@ -10,7 +11,7 @@ const ProjectDeadline: React.FC = () => {
   let content;
 
   if (projects) {
-    content = deadlineProjects.map((project: any) => (
+    content = deadlineProjects.map((project: ProjectType) => (
       <tr key={project.id}>
         <td className="text-sm font-roboto">{project.name}</td>
 

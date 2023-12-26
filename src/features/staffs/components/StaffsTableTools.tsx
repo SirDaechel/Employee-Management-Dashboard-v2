@@ -14,9 +14,10 @@ import {
   setDeletedStaffs,
 } from "../data/staffsApiSlice";
 import { changeStaffsState } from "../../../utils/changeStaffsState";
+import { StaffType } from "../../../models/types";
 
 type StaffsTableTools = {
-  theStaffs: any[];
+  theStaffs: StaffType[];
   activeTab: number;
 };
 
