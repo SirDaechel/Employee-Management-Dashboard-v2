@@ -40,7 +40,7 @@ const StaffsTable: React.FC<StaffsTableType> = ({
 
   return (
     <>
-      <section className="m:w-full m:overflow-x-auto relative">
+      <section className="relative w-full overflow-x-auto">
         <table>
           <StaffsTableTitle
             staffs={staffs}

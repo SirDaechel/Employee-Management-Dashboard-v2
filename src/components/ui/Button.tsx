@@ -11,7 +11,7 @@ const Button: React.FC<ButtonProp> = ({ icon, text, className, linkTo }) => {
   return (
     <Link to={linkTo ? linkTo : ""} className={className}>
       {icon}
-      <p>{text}</p>
+      <p className="ss:hidden">{text}</p>
     </Link>
   );
 };

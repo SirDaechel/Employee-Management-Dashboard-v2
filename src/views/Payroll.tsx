@@ -15,8 +15,8 @@ const Payroll = () => {
 
   return (
     <div className="flex flex-col items-start justify-center gap-8">
-      <div className="w-full flex items-center justify-between gap-4 m:flex-col">
-        <div className="grid grid-cols-r31fr items-center justify-start gap-4 m:flex m:flex-col m:w-full">
+      <div className="w-full flex items-center justify-between gap-4 m:flex-col xl:flex-col xxl:flex-col">
+        <div className="w-full grid grid-cols-r31fr items-center justify-start gap-4 m:flex m:flex-col xl:grid-cols-r21fr xxl:grid-cols-r31fr">
           <PayrollMetricCard
             topText={"Total Staffs"}
             icon={userIcon}
@@ -73,7 +73,7 @@ const Payroll = () => {
         setQuery={setQuery}
         placeholder="Search Payroll"
       />
-      <PayrollTable />
+      <PayrollTable query={query} />
     </div>
   );
 };

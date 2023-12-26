@@ -46,7 +46,7 @@ const ProjectDeadline: React.FC = () => {
   return (
     <section className="h-fit bg-white flex-grow m:max-w-full m:overflow-x-scroll">
       <table className="max-h-fit m:w-max">
-        <caption className="pl-4 pr-4 pt-4 text-base font-medium text-left font-poppins text-darkgrey pb-4">
+        <caption className="pl-4 pr-4 pt-4 text-base font-medium text-left font-poppins text-darkgrey pb-4 ss:text-xs">
           Project Deadlines
         </caption>
 

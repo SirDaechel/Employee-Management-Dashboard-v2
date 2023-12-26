@@ -1,74 +1,92 @@
-const PayrollList: React.FC = () => {
+type PayrollListType = {
+  staff: any;
+};
+
+const PayrollList: React.FC<PayrollListType> = ({ staff }) => {
+  const { id, name, wage, workinghours, statutorywage, paystatus } = staff;
+  const deduction = 750;
   return (
-    <tbody>
-      <tr>
-        <td>
-          <div>
-            <p className="text-darkergrey text-xs font-light font-poppins w-max">
-              David
-            </p>
-          </div>
-        </td>
+    <tr key={id}>
+      <td>
+        <div>
+          <p className="text-darkergrey text-xs font-light font-poppins w-max">
+            {name}
+          </p>
+        </div>
+      </td>
 
-        <td>
-          <div>
-            <p className="text-darkergrey text-xs font-light font-poppins w-max">
-              12 hours per week
-            </p>
-          </div>
-        </td>
+      <td>
+        <div>
+          <p className="text-darkergrey text-xs font-light font-poppins w-max">
+            {workinghours} hours per week
+          </p>
+        </div>
+      </td>
 
-        <td>
-          <div>
-            <p className="text-darkergrey text-xs font-light font-poppins w-max">
-              $1700
-            </p>
-          </div>
-        </td>
+      <td>
+        <div>
+          <p className="text-darkergrey text-xs font-light font-poppins w-max">
+            ${wage}
+          </p>
+        </div>
+      </td>
 
-        <td>
-          <div>
-            <p className="text-darkergrey text-xs font-light font-poppins w-max">
-              $1800
-            </p>
-          </div>
-        </td>
+      <td>
+        <div>
+          <p className="text-darkergrey text-xs font-light font-poppins w-max">
+            ${statutorywage}
+          </p>
+        </div>
+      </td>
 
-        <td>
-          <div>
-            <p className="text-darkergrey text-xs font-light font-poppins w-max">
-              $100
-            </p>
-          </div>
-        </td>
+      <td>
+        <div>
+          <p className="text-red-500 text-xs font-light font-poppins w-max">
+            {`-${deduction}`}
+          </p>
+        </div>
+      </td>
 
-        <td>
-          <div>
-            <p className="text-darkergrey text-xs font-light font-poppins w-max">
-              $1900
-            </p>
-          </div>
-        </td>
+      <td>
+        <div>
+          <p className="text-darkergrey text-xs font-light font-poppins w-max">
+            ${Number(wage) - deduction}
+          </p>
+        </div>
+      </td>
 
-        <td>
-          <div
-            className="w-fit rounded p-0.4"
+      <td>
+        <div
+          className="w-fit rounded p-0.4"
+          style={{
+            backgroundColor:
+              paystatus === "Paid"
+                ? "#B4E197"
+                : paystatus === "Unpaid"
+                ? "#FA9884"
+                : paystatus === "Pending"
+                ? "#EEEEEE"
+                : paystatus,
+          }}
+        >
+          <p
+            className="text-darkergrey text-xs font-light font-poppins w-max"
             style={{
-              backgroundColor: "#B4E197",
+              color:
+                paystatus === "Paid"
+                  ? "#4E944F"
+                  : paystatus === "Unpaid"
+                  ? "#D21312"
+                  : paystatus === "Pending"
+                  ? "#73777B"
+                  : paystatus,
             }}
           >
-            <p
-              className="text-darkergrey text-xs font-light font-poppins w-max"
-              style={{
-                color: "#4E944F",
-              }}
-            >
-              Paid
-            </p>
-          </div>
-        </td>
-      </tr>
-    </tbody>
+            {paystatus}
+          </p>
+        </div>
+      </td>
+    </tr>
   );
 };
 

@@ -142,7 +142,7 @@ const Calendar: React.FC<CalendarType> = ({
   };
 
   return (
-    <section className="w-full min-h-max bg-white p-4 rounded-px10 flex flex-col gap-4 overflow-hidden shadow-custom scale-0.7 absolute bottom-0 left-0 right-0">
+    <section className="w-full min-h-max bg-white p-4 rounded-px10 flex flex-col gap-4 overflow-hidden shadow-custom scale-0.7 absolute bottom-0 left-0 right-0 ss:w-max ss:left-m25 xl:w-fit xl:left-m25 xl:top-p10 xxl:w-fit xxl:top-p10">
       <div className="flex items-center justify-between pb-4">
         <p className="text-base font-medium text-grey13 font-poppins">
           {title}

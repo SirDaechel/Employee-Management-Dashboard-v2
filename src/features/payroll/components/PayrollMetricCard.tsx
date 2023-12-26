@@ -16,7 +16,7 @@ const PayrollMetricCard = ({
   percentage,
 }: MetricCardType) => {
   return (
-    <div className="bg-white p-4 w-64 rounded-px3 hover:scale-102 hover:transition m:w-full">
+    <div className="w-full bg-white p-4 rounded-px3 hover:scale-102 hover:transition m:w-full xl:w-full xxl:w-full">
       <div className="flex items-center justify-between mb-1.3">
         <p className="text-0.83">{topText}</p>
         <span className="text-0.83">{icon}</span>

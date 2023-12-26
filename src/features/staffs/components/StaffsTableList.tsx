@@ -161,43 +161,43 @@ const StaffsTableList: React.FC<TableListType> = ({
         </td>
 
         <td>
-          <p className="text-darkergrey text-0.83 font-light font-roboto w-max pl-2">
+          <p className="text-darkergrey text-0.83 font-light font-openSans w-max pl-2">
             {name}
           </p>
         </td>
 
         <td>
-          <p className="text-darkergrey text-0.83 font-light font-roboto w-max">
+          <p className="text-darkergrey text-0.83 font-light font-openSans w-max">
             {email}
           </p>
         </td>
 
         <td>
-          <p className="text-darkergrey text-0.83 font-light font-roboto w-max">
+          <p className="text-darkergrey text-0.83 font-light font-openSans w-max">
             {role}
           </p>
         </td>
 
         <td>
-          <p className="text-darkergrey text-0.83 font-light font-roboto w-max">
+          <p className="text-darkergrey text-0.83 font-light font-openSans w-max">
             {phone}
           </p>
         </td>
 
         <td>
-          <p className="text-darkergrey text-0.83 font-light font-roboto w-max pl-2">
+          <p className="text-darkergrey text-0.83 font-light font-openSans w-max pl-2">
             ${wage}
           </p>
         </td>
 
         <td>
-          <p className="text-darkergrey text-0.83 font-light font-roboto w-max pl-2">
+          <p className="text-darkergrey text-0.83 font-light font-openSans w-max pl-2">
             {workinghours} / week
           </p>
         </td>
 
         <td>
-          <p className="text-darkergrey text-0.83 font-light font-roboto w-max pl-2">
+          <p className="text-darkergrey text-0.83 font-light font-openSans w-max pl-2">
             {age} y/o
           </p>
         </td>

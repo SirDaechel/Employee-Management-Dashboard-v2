@@ -1,13 +1,27 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from "../../../store/Store";
+import { notifications } from "./notifications";
 
-export const notificationsApiSlice = createApi({
-  reducerPath: "notifications",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3500" }),
-  endpoints: (builder) => ({
-    getNotifications: builder.query({
-      query: () => "/notification",
-    }),
-  }),
+type SliceType = {
+  notifications: any[];
+};
+
+const initialState: SliceType = {
+  notifications: notifications,
+};
+
+const notificationsSlice = createSlice({
+  name: "notifications",
+  initialState,
+  reducers: {
+    setNotifications: (state, action) => {
+      return { ...state, notifications: action.payload };
+    },
+  },
 });
 
-export const { useGetNotificationsQuery } = notificationsApiSlice;
+export const notificationsState = (state: RootState) => state.notificationsData;
+
+export const { setNotifications } = notificationsSlice.actions;
+
+export default notificationsSlice.reducer;

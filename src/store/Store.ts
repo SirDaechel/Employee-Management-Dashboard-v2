@@ -3,6 +3,7 @@ import StaffsPerPageReducer from "./StaffsPerPageSlice";
 import staffsReducer from "../features/staffs/data/staffsApiSlice";
 import projectsReducer from "../features/projects/data/projectsApiSlice";
 import helpdeskReducer from "../features/helpdesk/data/helpdeskApiSlice";
+import notificationsReducer from "../features/notifications/data/notificationsApiSlice";
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     staffsData: staffsReducer,
     projectsData: projectsReducer,
     helpdeskData: helpdeskReducer,
+    notificationsData: notificationsReducer,
   },
 });
 

@@ -47,7 +47,7 @@ const Project: React.FC<ProjectType> = ({
         <div
           id={project.id}
           key={project.id}
-          className="flex flex-col gap-4 w-64 m:w-full h-fit bg-white rounded-lg p-0.7 relative"
+          className="w-full flex flex-col gap-4 h-fit bg-white rounded-lg p-0.7 relative"
         >
           <div className="flex items-center justify-between">
             <p

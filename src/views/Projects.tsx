@@ -70,7 +70,7 @@ const Projects: React.FC = () => {
         activeTab={activeTab}
         setActiveTab={setActiveTab}
       />
-      <section className="grid grid-cols-r41fr gap-x-4 gap-y-8 m:flex m:flex-col m:gap-4">
+      <section className="grid grid-cols-r41fr gap-x-4 gap-y-8 w-full m:flex m:flex-col m:gap-4 xl:grid-cols-r21fr xxl:grid-cols-r31fr">
         {activeTab === 0 && (
           <Project
             initialProjects={projects}

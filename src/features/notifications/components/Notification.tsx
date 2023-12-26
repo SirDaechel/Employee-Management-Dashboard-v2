@@ -1,27 +1,32 @@
 import teamIcon from "../../../assets/icons/teamIcon";
-import avatar1 from "../../../assets/images/avatar (1).webp";
 
-const Notification: React.FC = () => {
+type NotificationType = {
+  notification: any;
+};
+
+const Notification: React.FC<NotificationType> = ({ notification }) => {
+  const { id, image, subject, message, department, time } = notification;
   return (
-    <section className="flex items-start justify-start pb-4 gap-4 border-b-px1 border-b-solid border-b-white3">
+    <section
+      id={id}
+      className="flex items-start justify-start py-4 gap-4 border-b-px1 border-b-solid border-b-white3"
+    >
       <img
         className="w-10 h-10 rounded-br50 border-px2 border-solid border-primarycolour"
-        src={avatar1}
+        src={image}
         alt=""
       />
 
       <article>
         <p className="text-xs text-customgrey font-normal font-poppins">
-          <span className="text-darkergrey text-sm font-medium">
-            David Okpala
-          </span>{" "}
-          This is where the notification will be!
+          <span className="text-darkergrey text-sm font-medium">{subject}</span>{" "}
+          {message}
         </p>
 
         <div className="flex items-center justify-start gap-2 mt-2">
           <div className="text-primarycolour">{teamIcon}</div>
           <p className="text-xs text-customgrey font-normal font-poppins">
-            Admins
+            {department}
           </p>
         </div>
         <div className="flex items-center justify-start gap-3 mt-2">
@@ -34,7 +39,9 @@ const Notification: React.FC = () => {
         </div>
       </article>
 
-      <div className="text-xs text-customgrey font-medium font-poppins">2d</div>
+      <div className="text-xs text-customgrey font-medium font-poppins">
+        {time}
+      </div>
     </section>
   );
 };

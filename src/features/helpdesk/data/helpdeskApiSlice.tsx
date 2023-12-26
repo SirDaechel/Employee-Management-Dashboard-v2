@@ -9,11 +9,15 @@ const initialState = {
 const helpdeskSlice = createSlice({
   name: "helpdesk",
   initialState,
-  reducers: {},
+  reducers: {
+    setTickets: (state, action) => {
+      return { ...state, tickets: action.payload };
+    },
+  },
 });
 
 export const helpdeskState = (state: RootState) => state.helpdeskData;
 
-export const {} = helpdeskSlice.actions;
+export const { setTickets } = helpdeskSlice.actions;
 
 export default helpdeskSlice.reducer;

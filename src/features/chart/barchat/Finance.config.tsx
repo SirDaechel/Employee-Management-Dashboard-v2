@@ -44,7 +44,12 @@ export const data: ChartData<"bar"> = {
       backgroundColor: "#6b63ffc2",
       borderRadius: 2,
       barPercentage: 0.8,
-      barThickness: isScreenWidth <= 767 ? 10 : 22,
+      barThickness:
+        isScreenWidth <= 767
+          ? 10
+          : isScreenWidth >= 768 && isScreenWidth <= 1023
+          ? 15
+          : 22,
       minBarLength: 7,
       // stack: "combined",
     },
@@ -55,7 +60,12 @@ export const data: ChartData<"bar"> = {
       backgroundColor: "#F7B84B",
       borderRadius: 2,
       barPercentage: 0.8,
-      barThickness: isScreenWidth <= 767 ? 10 : 22,
+      barThickness:
+        isScreenWidth <= 767
+          ? 10
+          : isScreenWidth >= 768 && isScreenWidth <= 1023
+          ? 15
+          : 22,
       minBarLength: 7,
       // stack: "combined",
     },

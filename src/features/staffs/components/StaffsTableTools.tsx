@@ -219,7 +219,7 @@ const TableTools: React.FC<StaffsTableTools> = ({ theStaffs, activeTab }) => {
         </div>
 
         <div className="flex items-center justify-center gap-2.5">
-          <p className="text-grey6 font-openSans text-0.83 font-extralight">
+          <p className="text-grey6 font-openSans text-0.83 font-extralight ss:hidden xl:hidden">
             Staffs Per Page
           </p>
 
