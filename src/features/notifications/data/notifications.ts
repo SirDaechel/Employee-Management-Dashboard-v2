@@ -1,7 +1,12 @@
+import avatar1 from "../../../assets/images/avatar (1).webp";
+import avatar4 from "../../../assets/images/avatar (4).webp";
+import avatar2 from "../../../assets/images/avatar (2).webp";
+import avatar7 from "../../../assets/images/avatar (7).webp";
+
 export const notifications = [
   {
     id: 1,
-    image: "src/assets/images/avatar (1).webp",
+    image: avatar1,
     subject: "Chinedu Okoro",
     message:
       "Deployed the latest software updates and patches to all employee workstations.",
@@ -10,7 +15,7 @@ export const notifications = [
   },
   {
     id: 2,
-    image: "src/assets/images/avatar (4).webp",
+    image: avatar4,
     subject: "Chidinma Eze",
     message:
       "Conducted a performance analysis of the company's website and recommended optimizations.",
@@ -19,7 +24,7 @@ export const notifications = [
   },
   {
     id: 3,
-    image: "src/assets/images/avatar (2).webp",
+    image: avatar2,
     subject: "Elena Petrov",
     message: "is requesting access to the Data Analytics Dashboard project",
     department: "Analytics Team",
@@ -28,7 +33,7 @@ export const notifications = [
   },
   {
     id: 4,
-    image: "src/assets/images/avatar (7).webp",
+    image: avatar7,
     subject: "Michael Williams",
     message:
       "Upgraded CryptoFin Ltd. firewall and intrusion detection system to enhance security.",
